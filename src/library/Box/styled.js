@@ -59,43 +59,62 @@ const getSpacingStyles = (
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
     ['height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ breakpoints, height, inline, theme, width, ...restProps }) => {
-  const rtl = theme.direction === 'rtl';
+})(
+  ({
+    borderRadius,
+    breakpoints,
+    color,
+    height,
+    inline,
+    position,
+    scrollable,
+    theme,
+    width,
+    ...restProps
+  }) => {
+    const rtl = theme.direction === 'rtl';
 
-  const mapValueToProperty = (
-    property: string,
-    value: SpacingValue
-  ): number | string => {
-    const map = {
-      display: (value) => (value ? 'inline-block' : undefined),
-      height: getMeasurement,
-      width: getMeasurement,
-      ...['margin', 'padding'].reduce((acc, property) => {
-        Object.keys(getSpacingStyles(property, restProps, rtl)).forEach(
-          (style) => {
-            acc[style] = (value) => getSpaceValue(property, theme, value);
-          }
-        );
-        return acc;
-      }, {})
+    const mapValueToProperty = (
+      property: string,
+      value: SpacingValue
+    ): number | string => {
+      const map = {
+        backgroundColor: (color) => color,
+        borderRadius: (borderRadius) => borderRadius,
+        display: (value) => (value ? 'inline-block' : undefined),
+        height: getMeasurement,
+        width: getMeasurement,
+        ...['margin', 'padding'].reduce((acc, property) => {
+          Object.keys(getSpacingStyles(property, restProps, rtl)).forEach(
+            (style) => {
+              acc[style] = (value) => getSpaceValue(property, theme, value);
+            }
+          );
+          return acc;
+        }, {})
+      };
+
+      return map[property](value);
     };
 
-    return map[property](value);
-  };
-
-  return {
-    ...componentStyleReset(theme),
-    ...getResponsiveStyles({
-      breakpoints,
-      mapValueToProperty,
-      styles: {
-        display: inline,
-        height,
-        ...getSpacingStyles('margin', restProps, rtl),
-        ...getSpacingStyles('padding', restProps, rtl),
-        width
-      },
-      theme
-    })
-  };
-});
+    return {
+      ...(position && { position }),
+      ...(scrollable && { overflow: 'scroll' }),
+      ...componentStyleReset(theme),
+      ...getResponsiveStyles({
+        breakpoints,
+        mapValueToProperty,
+        styles: {
+          backgroundColor: color,
+          borderRadius,
+          display: inline,
+          height,
+          ...getSpacingStyles('margin', restProps, rtl),
+          ...getSpacingStyles('padding', restProps, rtl),
+          width
+        },
+        theme
+      })
+    };
+  }
+);
