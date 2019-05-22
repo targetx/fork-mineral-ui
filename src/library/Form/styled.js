@@ -2,14 +2,27 @@
 import styled from '@emotion/styled';
 import { hideVisually } from 'polished';
 import { componentStyleReset, getNormalizedValue } from '../styles';
-import {
-  formFieldTheme,
-  formFieldDividerTheme,
-  formFieldsetTheme
-} from './themes';
+import { formFieldDividerTheme, formFieldsetTheme, formFieldTheme } from './themes';
 
-export const FormFieldRoot = styled('div')(({ theme }) =>
-  componentStyleReset(theme)
+export const FormFieldRoot = styled('div')(
+  ({ border, borderBottom, borderLeft, borderRight, borderTop, marginBottom, marginTop, marginVertical, width, theme }) => {
+    return {
+      ...componentStyleReset(theme),
+      /* TargetX Custom Styles */
+      ...(border && { border }),
+      ...(borderBottom && { borderBottom }),
+      ...(borderLeft && { borderLeft }),
+      ...(borderRight && { borderRight }),
+      ...(borderTop && { borderTop }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      }),
+      ...(width && { width })
+    };
+  }
 );
 
 export const FormFieldCaption = styled('div')(
@@ -35,13 +48,20 @@ export const FormFieldCaption = styled('div')(
   }
 );
 
-export const FormFieldDividerRoot = styled('div')(({ theme: baseTheme }) => {
+export const FormFieldDividerRoot = styled('div')(({ color, marginBottom, marginTop, marginVertical, theme: baseTheme }) => {
   const theme = formFieldDividerTheme(baseTheme);
 
   return {
-    backgroundColor: theme.FormFieldDivider_borderColor,
+    backgroundColor: color || theme.FormFieldDivider_borderColor,
     height: theme.FormFieldDivider_borderWidth,
-    margin: `${theme.FormFieldDivider_margin} 0`
+    margin: `${theme.FormFieldDivider_margin} 0`,
+    /* TargetX Custom Styles */
+    ...(marginBottom && { marginBottom }),
+    ...(marginTop && { marginTop }),
+    ...(marginVertical && {
+      marginBottom: marginVertical,
+      marginTop: marginVertical
+    })
   };
 });
 
@@ -54,7 +74,8 @@ export const FormFieldSecondaryText = styled('span')(
         ? theme.FormFieldSecondaryText_color
         : theme.FormFieldSecondaryText_color_required,
       fontSize: theme.FormFieldSecondaryText_fontSize,
-      fontWeight: theme.FormFieldSecondaryText_fontWeight
+      fontWeight: theme.FormFieldSecondaryText_fontWeight,
+      padding: '1px'
     };
   }
 );
@@ -95,10 +116,13 @@ export const FormFieldTextWrapper = styled('div')(
       justifyContent: 'space-between',
       marginBottom: theme.FormFieldLabel_marginBottom,
       ...(hideLabel ? hideVisually() : {}),
-      '& > *': {
+      '& > *:not(style)': {
         alignSelf: 'flex-end',
         display: 'inline-block'
-      }
+      },
+
+      /* TargetX Custom Styles */
+      fontFamily: theme.FormFieldLabel_fontFamily
     };
   }
 );
