@@ -1,0 +1,13 @@
+{
+  "imports": [
+    "../aliases.json"
+  ],
+  "global": {
+    "type": "control",
+    "category": "control"
+  },
+  "props": [
+    { "name": "control_borderColor",        "value": "{!gray_40}" },
+    { "name": "control_borderColor_hover",  "value": "{!gray_40}" }
+  ]
+}
