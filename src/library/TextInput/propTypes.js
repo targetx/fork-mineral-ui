@@ -12,13 +12,17 @@ import {
 import { SIZE, TYPE, VARIANT } from './constants';
 
 export const textInputPropTypes = {
+  /* TargetX Custom props */
+  borderRadius: oneOfType([number, string]),
+  textAlign: string,
+
   className: string,
   defaultValue: string,
   disabled: bool,
   htmlSize: oneOfType([number, string]),
   iconStart: element,
   iconEnd: element,
-  inputRef: func,
+  inputRef: oneOfType([func, object]),
   rootProps: object,
   invalid: bool,
   onChange: func,

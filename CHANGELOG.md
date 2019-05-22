@@ -1,3 +1,7 @@
+# [1.54.0](https://github.com/targetx/fork-mineral-ui/compare/v1.53.0...v1.54.0) (2020-06-25)
+
+
+
 # [0.58.0](https://github.com/mineral-ui/mineral-ui/compare/v0.57.0...v0.58.0) (2019-03-30)
 
 
