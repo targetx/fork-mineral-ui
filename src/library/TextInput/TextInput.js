@@ -8,6 +8,10 @@ import type { TextInputDefaultProps, TextInputProps } from './types';
 
 const TextInput = (props: TextInputProps) => {
   const {
+    /* TargetX Custom props */
+    borderRadius,
+    textAlign,
+
     className,
     disabled,
     iconEnd,
@@ -24,6 +28,9 @@ const TextInput = (props: TextInputProps) => {
     ...restProps
   } = props;
   const inputProps = {
+    /* TargetX Custom props */
+    textAlign,
+
     'aria-invalid': invalid,
     'aria-required': required,
     controlRef: inputRef,
@@ -34,6 +41,9 @@ const TextInput = (props: TextInputProps) => {
   };
 
   const rootProps = {
+    /* TargetX Custom props */
+    borderRadius,
+
     className,
     control: Input,
     controlProps: inputProps,

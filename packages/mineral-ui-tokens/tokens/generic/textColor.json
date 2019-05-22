@@ -32,6 +32,11 @@
     { "name": "color_warningPrimary",  "value": "{!white}" },
     { "name": "color_warning_active",  "value": "{!bronze_70}" },
     { "name": "color_warning_focus",   "value": "{!bronze_60}" },
-    { "name": "color_warning_hover",   "value": "{!bronze_50}" }
+    { "name": "color_warning_hover",   "value": "{!bronze_50}" },
+    { "name": "color_grayscale",         "value": "{!gray_80}" },
+    { "name": "color_grayscalePrimary",  "value": "{!gray_100}" },
+    { "name": "color_grayscale_active",  "value": "{!gray_90}" },
+    { "name": "color_grayscale_focus",   "value": "{!gray_80}" },
+    { "name": "color_grayscale_hover",   "value": "{!gray_70}" }
   ]
 }

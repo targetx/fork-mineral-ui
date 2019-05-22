@@ -120,7 +120,7 @@ export const Suffix: StyledComponent<{ [key: string]: any }> = styled('span', {
 export const Underlay: StyledComponent<{ [key: string]: any }> = styled('div', {
   shouldForwardProp: (prop) =>
     ['disabled', 'readOnly'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ disabled, readOnly, theme: baseTheme, variant }) => {
+})(({ borderRadius, disabled, readOnly, theme: baseTheme, variant }) => {
   const theme = fauxControlTheme(baseTheme);
 
   return {
@@ -132,7 +132,7 @@ export const Underlay: StyledComponent<{ [key: string]: any }> = styled('div', {
       variant && !disabled && !readOnly
         ? theme[`borderColor_${variant}`]
         : theme.FauxControl_borderColor,
-    borderRadius: theme.FauxControl_borderRadius,
+    borderRadius: borderRadius ? borderRadius : theme.FauxControl_borderRadius,
     borderStyle: 'solid',
     borderWidth: theme.FauxControl_borderWidth,
     bottom: 0,
