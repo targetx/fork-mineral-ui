@@ -50,6 +50,12 @@ export type SortableTableProps = any; // TODO
 export type SelectableSortableTableProps = any; // TODO
 
 export type TableBaseProps = {
+  backgroundColor?: string,
+  border?: string,
+  borderRadius?: string,
+  fullWidth?: boolean,
+  width?: string,
+
   columns: Columns,
   data: Rows,
   hideHeader?: boolean,
@@ -192,6 +198,10 @@ type TableThemeKeys = {|
 |};
 
 export type TableCellProps = {
+  /* TargetX Custom Props */
+  verticalAlign: string,
+
+  /* Built-In Props */
   as?: string,
   children?: React$Node,
   columnKey?: string,
@@ -244,7 +254,9 @@ export type TableHeaderCellProps = {
   maxWidth?: number | string,
   render?: RenderFn,
   textAlign?: ColumnAlign,
-  width?: number | string
+  width?: number | string,
+  borderless?: boolean,
+  border?: number | string
 };
 
 export type TableHeaderCellDefaultProps = {
