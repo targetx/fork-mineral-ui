@@ -10,8 +10,8 @@ import { buttonTheme } from './themes';
 import type { ButtonProps } from './types';
 
 const chooseColor = ({ disabled, primary, minimal }: ButtonProps, theme) => {
-  if (disabled) {
-    return theme.color_disabled;
+  if (disabled && !minimal) {
+    return theme.Button_color_primary;
   } else if (primary) {
     return theme.Button_color_primary;
   } else if (minimal) {
@@ -75,6 +75,8 @@ export const Button = styled('button', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
 })(
   ({
+    width,
+
     circular,
     disabled,
     fullWidth,
@@ -113,9 +115,11 @@ export const Button = styled('button', {
     return {
       ...componentStyleReset(baseTheme),
 
+      opacity: disabled && 0.5,
+
       backgroundColor: (() => {
         if (disabled && !minimal) {
-          return theme.backgroundColor_disabled;
+          return theme.Button_backgroundColor_primary;
         } else if (primary) {
           return theme.Button_backgroundColor_primary;
         } else if (minimal) {
@@ -149,7 +153,7 @@ export const Button = styled('button', {
           : `0 ${theme.Button_paddingHorizontal}`,
       textDecoration: 'none',
       verticalAlign: 'middle',
-      width: fullWidth && '100%',
+      width: fullWidth ? '100%' : width,
       '&:focus': !disabled && {
         backgroundColor: (() => {
           if (primary) {
@@ -217,7 +221,7 @@ export const Button = styled('button', {
 
       '& [role="img"]': {
         boxSizing: 'content-box',
-        color: disabled || primary ? null : theme.ButtonIcon_color,
+        color: disabled || primary || minimal ? null : theme.ButtonIcon_color,
         display: 'block',
         flexShrink: 0
       },
