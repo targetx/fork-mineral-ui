@@ -11,6 +11,20 @@ type Size = $Keys<typeof SIZE>;
 type Variant = $Keys<typeof VARIANT>;
 
 export type ButtonProps = {
+  /* TargetX Custom Props */
+  htmlFor?: string,
+  justifyContent?: string,
+  margin?: number | string,
+  marginBottom?: number | string,
+  marginHorizontal?: number | string,
+  marginLeft?: number | string,
+  marginRight?: number | string,
+  marginTop?: number | string,
+  marginVertical?: number | string,
+  rel?: string,
+  target?: string,
+  width?: string,
+
   children?: React$Node,
   circular?: boolean,
   disabled?: boolean,

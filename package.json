@@ -1,16 +1,16 @@
 {
-  "name": "mineral-ui",
+  "name": "@targetx/mineral-ui",
   "author": "Mineral UI",
   "description": "Mineral UI component library",
-  "version": "0.58.0",
+  "version": "1.56.0",
   "license": "Apache-2.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mineral-ui/mineral-ui.git"
+    "url": "https://github.com/targetx/fork-mineral-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/mineral-ui/mineral-ui/issues"
+    "url": "https://github.com/targetx/fork-mineral-ui/issues"
   },
   "homepage": "http://mineral-ui.com",
   "main": "./dist/index.js",
@@ -46,6 +46,9 @@
     }
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "0.8.6",
+    "@targetx/mineral-ui-tokens": "1.5.0",
+    "color": "3.1.2",
     "exenv": "1.2.2",
     "focus-trap-react": "3.1.2",
     "fontfaceobserver": "2.1.0",
@@ -53,7 +56,6 @@
     "lodash.debounce": "4.0.8",
     "lodash.range": "3.2.0",
     "memoize-one": "4.0.3",
-    "mineral-ui-tokens": "0.4.0",
     "no-scroll": "2.1.1",
     "prop-types": "^15.5.7",
     "react-fast-compare": "3.2.0",
@@ -76,7 +78,6 @@
     "@babel/preset-react": "7.10.4",
     "@emotion/babel-preset-css-prop": "10.0.27",
     "@emotion/core": "10.0.28",
-    "@emotion/is-prop-valid": "0.8.8",
     "@emotion/styled": "10.0.27",
     "acorn": "6.4.1",
     "babel-core": "6.26.3",
@@ -155,7 +156,6 @@
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.27",
-    "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "react": "^16.3.0",
