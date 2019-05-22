@@ -72,7 +72,11 @@ const flexItemMapValueToProperty = (
     flexBasis: getWidthValue,
     flexGrow: (value) => value,
     flexShrink: (value) => value,
-    minWidth: getWidthValue
+    minWidth: getWidthValue,
+
+    alignItems: getAlignment,
+    flexDirection: (value) => value,
+    justifyContent: getJustification
   };
 
   return map[property](value);
@@ -84,17 +88,34 @@ export const FlexItemRoot: StyledComponent<{ [key: string]: any }> = styled(
     shouldForwardProp: (prop) =>
       ['inline', 'minWidth', 'width'].indexOf(prop) === -1
   }
-)(({ alignSelf, breakpoints, grow, minWidth, shrink, theme, width }) =>
-  getResponsiveStyles({
+)(
+  ({
+    flexBasis,
+    alignItems,
+    direction,
+    justifyContent,
+    alignSelf,
     breakpoints,
-    mapValueToProperty: flexItemMapValueToProperty,
-    styles: {
-      alignSelf,
-      flexBasis: width || 'auto',
-      flexGrow: grow,
-      flexShrink: shrink,
-      minWidth
-    },
-    theme
-  })
+    grow,
+    minWidth,
+    shrink,
+    theme,
+    width
+  }) =>
+    getResponsiveStyles({
+      breakpoints,
+      mapValueToProperty: flexItemMapValueToProperty,
+      styles: {
+        alignSelf,
+        flexBasis: flexBasis || width || 'auto',
+        flexGrow: grow,
+        flexShrink: shrink,
+        minWidth,
+
+        alignItems,
+        flexDirection: direction,
+        justifyContent
+      },
+      theme
+    })
 );

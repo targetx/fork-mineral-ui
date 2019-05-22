@@ -9,32 +9,49 @@ import type { StyledComponent } from '@emotion/styled-base/src/utils';
 
 export const OverflowContainerRoot: StyledComponent<{
   [key: string]: any
-}> = styled('div')(({ hideScrollbars, scrollX, scrollY, theme: baseTheme }) => {
-  const theme = overflowContainerTheme(baseTheme);
+}> = styled('div')(
+  ({
+    border,
+    borderRadius,
+    fullWidth,
+    width,
+    hideScrollbars,
+    scrollX,
+    scrollY,
+    theme: baseTheme
+  }) => {
+    const theme = overflowContainerTheme(baseTheme);
 
-  return {
-    outline: 0,
-    overflowX: scrollX ? 'auto' : undefined,
-    overflowY: scrollY ? 'auto' : undefined,
-    // Prevent flash of focus style when interacting with children
-    transition: 'outline 0.1s 0.25s',
+    return {
+      outline: 0,
+      overflowX: scrollX ? 'auto' : undefined,
+      overflowY: scrollY ? 'auto' : undefined,
+      // Prevent flash of focus style when interacting with children
+      transition: 'outline 0.1s 0.25s',
 
-    '&:focus': {
-      outline: theme.OverflowContainer_outline_focus
-    },
+      '&:focus': {
+        outline: theme.OverflowContainer_outline_focus
+      },
 
-    ...(hideScrollbars
-      ? {
-          overflow: '-moz-scrollbars-none',
-          msOverflowStyle: 'none',
+      ...(hideScrollbars
+        ? {
+            overflow: '-moz-scrollbars-none',
+            msOverflowStyle: 'none',
 
-          '&::-webkit-scrollbar': {
-            display: 'none'
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            }
           }
-        }
-      : undefined)
-  };
-});
+        : undefined),
+
+      /* TargetX Custom Styles */
+      ...(border && { border }),
+      ...(borderRadius && { borderRadius }),
+      ...(fullWidth && { width: '100%' }),
+      ...(width && { width })
+    };
+  }
+);
 
 export const OverflowContainerWithShadowsRoot: StyledComponent<{
   [key: string]: any
