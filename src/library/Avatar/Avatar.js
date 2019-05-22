@@ -1,9 +1,8 @@
 /* @flow */
 import React, { Children, cloneElement, Component } from 'react';
-import { AvatarRoot as Root } from './styled';
 import { ICON_SIZE, SHAPE, SIZE } from './constants';
-
 import { avatarPropTypes } from './propTypes';
+import { AvatarRoot as Root } from './styled';
 import type { AvatarDefaultProps, AvatarProps } from './types';
 
 export default class Avatar extends Component<AvatarProps> {
@@ -28,11 +27,7 @@ export default class Avatar extends Component<AvatarProps> {
           ) : (
             <span>{child}</span>
           );
-      } else if (
-        child.type &&
-        child.type.displayName &&
-        child.type.displayName.indexOf('Icon') !== -1
-      ) {
+      } else if (child.type && getComponentName(child).indexOf('Icon') !== -1) {
         icon = cloneElement(child, {
           size: ICON_SIZE[size || Avatar.defaultProps.size]
         });
@@ -50,4 +45,8 @@ export default class Avatar extends Component<AvatarProps> {
 
     return <Root {...rootProps}>{text || icon || children}</Root>;
   }
+}
+
+function getComponentName(element) {
+  return element.type.displayName || element.type.name || '';
 }
