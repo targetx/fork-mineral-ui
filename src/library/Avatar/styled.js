@@ -21,7 +21,10 @@ export const AvatarRoot = styled('span', {
     const theme = avatarTheme(baseTheme);
 
     const color = propColor || theme.color_themePrimary;
-    const size = theme[`Avatar_size_${propSize}`];
+    const size =
+      typeof propSize === 'number'
+        ? propSize
+        : theme[`Avatar_size_${propSize}`];
 
     return {
       ...componentStyleReset(baseTheme),
@@ -38,13 +41,20 @@ export const AvatarRoot = styled('span', {
       display: 'inline-flex',
       fontWeight: theme.Avatar_fontWeight,
       height: size,
-      lineHeight: size,
+      lineHeight:
+        typeof propSize === 'number'
+          ? `${propSize / 2}px`
+          : theme[`Avatar_size_${propSize}`],
       justifyContent: 'center',
       verticalAlign: 'middle',
       width: size,
 
       '& > abbr,& > span': {
-        fontSize: icon ? null : theme[`Avatar_fontSize_${propSize}`]
+        fontSize: icon
+          ? null
+          : typeof propSize === 'number'
+          ? propSize / 2
+          : theme[`Avatar_fontSize_${propSize}`]
       },
 
       '& > abbr': {
