@@ -16,10 +16,6 @@ const REGEX_GROUP = /(Checkbox|Radio|Group)/i;
 export default class FormField extends Component<FormFieldProps> {
   static displayName = 'FormField';
 
-  static defaultProps: FormFieldDefaultProps = {
-    requiredText: 'Required'
-  };
-
   static propTypes = formFieldPropTypes;
 
   id: string = this.props.id || `formField-${generateId()}`;
@@ -99,7 +95,7 @@ export default class FormField extends Component<FormFieldProps> {
             <span {...labelTextProps}>{label}</span>
             {(required || secondaryText) && (
               <FormFieldSecondaryText secondaryText={secondaryText}>
-                {secondaryText ? secondaryText : requiredText}
+                {secondaryText || requiredText || null}
               </FormFieldSecondaryText>
             )}
           </FormFieldTextWrapper>

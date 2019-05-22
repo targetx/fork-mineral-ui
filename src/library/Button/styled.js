@@ -113,9 +113,11 @@ export const Button = styled('button', {
     return {
       ...componentStyleReset(baseTheme),
 
+      opacity: disabled && 0.5,
+
       backgroundColor: (() => {
         if (disabled && !minimal) {
-          return theme.backgroundColor_disabled;
+          return theme.Button_backgroundColor_primary;
         } else if (primary) {
           return theme.Button_backgroundColor_primary;
         } else if (minimal) {

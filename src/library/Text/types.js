@@ -13,6 +13,14 @@ type Appearance = $Keys<typeof APPEARANCE>;
 type FontWeight = $Keys<typeof FONT_WEIGHT> | number;
 
 export type TextProps = {
+  /* TargetX Custom Props */
+  altFont?: boolean,
+  bold?: boolean,
+  fontFamily?: string,
+  fontSize?: string,
+  lineHeight?: string,
+
+  /* Built-In Props */
   align?: Align,
   appearance?: Appearance,
   children: React$Node,
