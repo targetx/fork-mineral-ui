@@ -47,12 +47,17 @@ export default class MenuItem extends PureComponent<MenuItemProps> {
     let startIcon = variant !== undefined && variant && variantIcons[variant];
     if (iconStart) {
       startIcon = cloneElement(iconStart, {
-        size: pxToEm(24),
+        size: iconStart.props.size || pxToEm(24),
         key: 'iconStart'
       });
     }
+
     const endIcon =
-      iconEnd && cloneElement(iconEnd, { size: pxToEm(24), key: 'iconEnd' });
+      iconEnd &&
+      cloneElement(iconEnd, {
+        size: iconEnd.props.size || pxToEm(24),
+        key: 'iconEnd'
+      });
 
     return (
       <Root {...rootProps}>
