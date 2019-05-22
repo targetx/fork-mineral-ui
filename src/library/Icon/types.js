@@ -10,6 +10,11 @@ import type {
 type Size = $Keys<typeof SIZE> | number | string;
 
 export type IconProps = {
+  /* TargetX Custom Props */
+  clickable?: boolean,
+  cursor?: string,
+
+  /* Built-In Props */
   children?: React$Node,
   color?: string,
   rtl?: boolean,

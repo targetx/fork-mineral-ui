@@ -6,10 +6,12 @@ import { iconTheme } from './themes';
 export const IconRoot = styled('svg', {
   shouldForwardProp: (prop) =>
     ['color', 'size'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ color, rtl, size, theme: baseTheme }) => {
+})(({ clickable, cursor, color, rtl, size, theme: baseTheme }) => {
   let theme = iconTheme(baseTheme);
 
   return {
+    ...(clickable ? { cursor: 'pointer' } : {}),
+    ...(cursor ? { cursor } : {}),
     color,
     fill: theme.Icon_fill,
     fontSize: theme.fontSize_base,
