@@ -58,8 +58,8 @@ const getSpacingStyles = (
 
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
-    ['height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ breakpoints, height, inline, theme, width, ...restProps }) => {
+    ['filter', 'height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
+})(({ background, backgroundColor, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, bottom, boxShadow, cursor, filter, left, maxHeight, maxWidth, minHeight, minWidth, overflow, overflowX, overflowY, position, right, scrollable, top, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
   const rtl = theme.direction === 'rtl';
 
   const mapValueToProperty = (
@@ -67,6 +67,8 @@ export const BoxRoot = styled('div', {
     value: SpacingValue
   ): number | string => {
     const map = {
+      background: background => background,
+      borderRadius: borderRadius => borderRadius,
       display: (value) => (value ? 'inline-block' : undefined),
       height: getMeasurement,
       width: getMeasurement,
@@ -89,6 +91,8 @@ export const BoxRoot = styled('div', {
       breakpoints,
       mapValueToProperty,
       styles: {
+        background,
+        borderRadius,
         display: inline,
         height,
         ...getSpacingStyles('margin', restProps, rtl),
@@ -96,6 +100,32 @@ export const BoxRoot = styled('div', {
         width
       },
       theme
-    })
+    }),
+
+    /* TargetX Custom Styles */
+    ...(backgroundColor && { backgroundColor }),
+    ...(blur && { filter: `blur(${blur}px)` }),
+    ...(border && { border }),
+    ...(borderBottom && { borderBottom }),
+    ...(borderLeft && { borderLeft }),
+    ...(borderRight && { borderRight }),
+    ...(borderTop && { borderTop }),
+    ...(bottom && { bottom }),
+    ...(boxShadow && { boxShadow }),
+    ...(cursor && { cursor }),
+    ...(filter && { filter }),
+    ...(left && { left }),
+    ...(maxHeight && { maxHeight: getMeasurement(maxHeight) }),
+    ...(maxWidth && { maxWidth: getMeasurement(maxWidth) }),
+    ...(minHeight && { minHeight: getMeasurement(minHeight) }),
+    ...(minWidth && { minWidth: getMeasurement(minWidth) }),
+    ...(overflow && { overflow }),
+    ...(overflowX && { overflowX }),
+    ...(overflowY && { overflowY }),
+    ...(position && { position }),
+    ...(right && { right }),
+    ...(scrollable && { overflow: 'auto' }),
+    ...(top && { top }),
+    ...(zIndex && { zIndex })
   };
 });
