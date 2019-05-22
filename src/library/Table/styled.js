@@ -26,6 +26,15 @@ import type { StyledComponent } from '@emotion/styled-base/src/utils';
 const REGEX_IS_EM_VALUE = /\d+em$/;
 
 const tableCellStyles = ({
+  clickable,
+  color,
+  cursor,
+  maxWidth,
+  minWidth,
+  truncate,
+  verticalAlign,
+  width,
+
   density,
   highContrast,
   noPadding,
@@ -55,8 +64,23 @@ const tableCellStyles = ({
     fontWeight: 'inherit',
     padding: noPadding ? 0 : `${paddingVertical} ${paddingHorizontal}`,
     textAlign: rtlTextAlign(textAlign || 'start', theme.direction),
-    verticalAlign: theme.TableCell_verticalAlign,
 
+    ...(clickable ? { cursor: 'pointer' } : {}),
+    ...(color ? { color } : {}),
+    ...(cursor ? { cursor } : {}),
+    ...(maxWidth ? { maxWidth } : {}),
+    ...(minWidth ? { minWidth } : {}),
+    ...(truncate
+      ? {
+          maxWidth: truncate === true ? '100%' : truncate,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          wordWrap: 'normal'
+        }
+      : {}),
+    verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
+    ...(width ? { width } : {}),
     ['&:not(:first-child)' + ignoreSsrWarning]: {
       [borderProperty]: borderVertical
     }
@@ -80,9 +104,10 @@ export const TableOverflowContainer = themed(OverflowContainer)(
 
 export const TableRoot: StyledComponent<{ [key: string]: any }> = styled(
   'table'
-)(({ theme }) => ({
+)(({ backgroundColor, theme }) => ({
   ...componentStyleReset(theme),
 
+  backgroundColor: backgroundColor ? backgroundColor : 'white',
   borderCollapse: 'collapse',
   borderSpacing: 0,
   width: '100%'
@@ -140,7 +165,17 @@ export const TableHeaderCellRoot: StyledComponent<{
 
     return tableCellStyles({ theme, ...props });
   },
-  ({ highContrast, maxWidth, minWidth, theme: baseTheme, width }) => {
+  ({
+    border,
+    borderless,
+    highContrast,
+    maxWidth,
+    minWidth,
+    theme: baseTheme,
+    width
+  }) => {
+    border = borderless ? 'none' : border;
+
     const theme = tableHeaderCellTheme(baseTheme);
     const fontSize = theme.TableHeaderCell_fontSize;
     const rtl = theme.direction === 'rtl';
@@ -168,7 +203,7 @@ export const TableHeaderCellRoot: StyledComponent<{
         [borderProperty]: 0,
 
         '&::before': {
-          [borderProperty]: borderVertical,
+          [borderProperty]: border ? border : borderVertical,
           bottom: 0,
           content: '""',
           [positionProperty]: 0,
@@ -184,66 +219,86 @@ export const TableHeaderCellRoot: StyledComponent<{
 
 export const TableRowRoot: StyledComponent<{ [key: string]: any }> = styled(
   'tr'
-)(({ highContrast, isSelected, theme: baseTheme, striped }) => {
-  const theme = tableRowTheme(baseTheme);
+)(
+  ({
+    clickable,
+    cursor,
+    highContrast,
+    hoverable,
+    isSelected,
+    theme: baseTheme,
+    striped
+  }) => {
+    const theme = tableRowTheme(baseTheme);
 
-  return {
-    backgroundColor: (() => {
-      if (isSelected) {
-        if (highContrast) {
-          return theme.TableRow_backgroundColor_highContrast_selected;
-        }
-        return theme.TableRow_backgroundColor_selected;
-      }
-    })(),
-
-    ...(highContrast
-      ? {
-          borderBottom: theme.TableRow_borderHorizontal_highContrast
-        }
-      : {
-          '&:not(:last-child)': {
-            borderBottom: theme.TableRow_borderHorizontal
-          }
-        }),
-
-    '*:not(thead) > &:hover': {
+    return {
+      ...(clickable ? { cursor: 'pointer' } : {}),
+      ...(cursor ? { cursor } : {}),
       backgroundColor: (() => {
         if (isSelected) {
           if (highContrast) {
-            return theme.TableRow_backgroundColor_highContrast_selectedHover;
+            return theme.TableRow_backgroundColor_highContrast_selected;
           }
-          return theme.TableRow_backgroundColor_selectedHover;
+          return theme.TableRow_backgroundColor_selected;
         }
-        return theme.TableRow_backgroundColor_hover;
-      })()
-    },
+      })(),
 
-    ['&:nth-child(even):not(:hover)' + ignoreSsrWarning]: {
-      backgroundColor:
-        !isSelected && striped ? theme.TableRow_backgroundColor_striped : null
-    },
+      ...(highContrast
+        ? {
+            borderBottom: theme.TableRow_borderHorizontal_highContrast
+          }
+        : {
+            '&:not(:last-child)': {
+              borderBottom: theme.TableRow_borderHorizontal
+            }
+          }),
 
-    ...(isSelected
-      ? {
-          ['& > td:first-child, & > th:first-child' + ignoreSsrWarning]: {
-            position: 'relative',
+      '*:not(thead) > &:hover': {
+        backgroundColor: (() => {
+          if (hoverable) {
+            if (isSelected) {
+              if (highContrast) {
+                return theme.TableRow_backgroundColor_highContrast_selectedHover;
+              }
+              return theme.TableRow_backgroundColor_selectedHover;
+            }
+            return theme.TableRow_backgroundColor_hover;
+          }
+        })()
+      },
 
-            '&::before': {
-              backgroundColor: theme.color_theme_60,
-              bottom: 0,
-              content: '""',
-              left: theme.direction !== 'rtl' ? 0 : null,
-              right: theme.direction === 'rtl' ? 0 : null,
-              position: 'absolute',
-              top: 0,
-              width: '4px'
+      ['&:nth-child(even):not(:hover)' + ignoreSsrWarning]: {
+        backgroundColor:
+          !isSelected && striped ? theme.TableRow_backgroundColor_striped : null
+      },
+
+      ['&:nth-child(even):hover']: {
+        backgroundColor: !hoverable
+          ? theme.TableRow_backgroundColor_striped
+          : null
+      },
+
+      ...(isSelected
+        ? {
+            ['& > td:first-child, & > th:first-child' + ignoreSsrWarning]: {
+              position: 'relative',
+
+              '&::before': {
+                backgroundColor: theme.color_theme_60,
+                bottom: 0,
+                content: '""',
+                left: theme.direction !== 'rtl' ? 0 : null,
+                right: theme.direction === 'rtl' ? 0 : null,
+                position: 'absolute',
+                top: 0,
+                width: '4px'
+              }
             }
           }
-        }
-      : undefined)
-  };
-});
+        : undefined)
+    };
+  }
+);
 
 export const PaddedCheckbox = withProps({ hideLabel: true })(
   styled(Checkbox)(({ density, isHeader, theme: baseTheme }) => {

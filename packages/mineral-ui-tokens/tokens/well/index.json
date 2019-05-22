@@ -7,7 +7,7 @@
     "category": "well"
   },
   "props": [
-    { "name": "well_backgroundColor",         "value": "{!gray_20}" },
+    { "name": "well_backgroundColor",         "value": "{!gray_30}" },
     { "name": "well_backgroundColor_danger",  "value": "{!red_20}" },
     { "name": "well_backgroundColor_success", "value": "{!green_20}" },
     { "name": "well_backgroundColor_warning", "value": "{!bronze_20}" },

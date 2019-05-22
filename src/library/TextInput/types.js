@@ -1,24 +1,25 @@
 /* @flow */
+import type { ComponentTheme, ComponentThemeFn } from '../themes/types';
 import { SIZE, TYPE, VARIANT } from './constants';
-
-import type {
-  ComponentTheme,
-  ComponentThemeFn,
-  ThemeValue
-} from '../themes/types';
 
 type Size = $Keys<typeof SIZE>;
 type Type = $Keys<typeof TYPE>;
 type Variant = $Keys<typeof VARIANT>;
 
 export type TextInputProps = {
+  /* TargetX Custom props */
+  borderRadius?: number | string,
+  textAlign?: string,
+
   className?: string,
   defaultValue?: string,
   disabled?: boolean,
   htmlSize?: number | string,
   iconStart?: React$Element<*>,
   iconEnd?: React$Element<*>,
-  inputRef?: (node: ?React$Component<*, *>) => void,
+  inputRef?: (
+    node: ?React$Component<*, *>
+  ) => void | { current: { [key: string]: any } },
   rootProps?: Object,
   invalid?: boolean,
   onChange?: (event: SyntheticEvent<>) => void,
