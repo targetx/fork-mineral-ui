@@ -8,6 +8,33 @@ export const spacingPropType = oneOfType([
 ]);
 
 export const boxPropTypes = {
+  /* TargetX Custom Props */
+  background: string,
+  backgroundColor: string,
+  blur: number,
+  border: string,
+  borderBottom: string,
+  borderLeft: string,
+  borderRadius: oneOfType([string, arrayOf(string)]),
+  borderRight: string,
+  borderTop: string,
+  bottom: string,
+  boxShadow: string,
+  cursor: string,
+  filter: string,
+  left: string,
+  maxHeight: oneOfType([string, number]),
+  maxWidth: oneOfType([string, number]),
+  minHeight: oneOfType([string, number]),
+  minWidth: oneOfType([string, number]),
+  overflow: string,
+  position: string,
+  right: string,
+  scrollable: bool,
+  top: string,
+  zIndex: oneOfType([string, number]),
+
+  /* Built-In Props */
   breakpoints: arrayOf(oneOfType([number, string])),
   height: spacingPropType,
   inline: oneOfType([bool, arrayOf(bool)]),
