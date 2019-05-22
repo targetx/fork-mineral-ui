@@ -8,8 +8,19 @@ import {
   formFieldsetTheme
 } from './themes';
 
-export const FormFieldRoot = styled('div')(({ theme }) =>
-  componentStyleReset(theme)
+export const FormFieldRoot = styled('div')(
+  ({ marginBottom, marginTop, marginVertical, width, theme }) => {
+    return {
+      ...componentStyleReset(theme),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      }),
+      ...(width && { width })
+    };
+  }
 );
 
 export const FormFieldCaption = styled('div')(
@@ -95,10 +106,13 @@ export const FormFieldTextWrapper = styled('div')(
       justifyContent: 'space-between',
       marginBottom: theme.FormFieldLabel_marginBottom,
       ...(hideLabel ? hideVisually() : {}),
-      '& > *': {
+      '& > *:not(style)': {
         alignSelf: 'flex-end',
         display: 'inline-block'
-      }
+      },
+
+      /* TargetX Custom Styles */
+      fontFamily: theme.FormFieldLabel_fontFamily
     };
   }
 );

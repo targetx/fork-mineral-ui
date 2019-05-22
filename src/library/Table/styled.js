@@ -24,6 +24,7 @@ import { SORT } from './constants';
 const REGEX_IS_EM_VALUE = /\d+em$/;
 
 const tableCellStyles = ({
+  verticalAlign,
   density,
   highContrast,
   noPadding,
@@ -53,7 +54,7 @@ const tableCellStyles = ({
     fontWeight: 'inherit',
     padding: noPadding ? 0 : `${paddingVertical} ${paddingHorizontal}`,
     textAlign: rtlTextAlign(textAlign || 'start', theme.direction),
-    verticalAlign: theme.TableCell_verticalAlign,
+    verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
 
     ['&:not(:first-child)' + ignoreSsrWarning]: {
       [borderProperty]: borderVertical
@@ -130,7 +131,9 @@ export const TableHeaderCellRoot = styled('th', {
 
     return tableCellStyles({ theme, ...props });
   },
-  ({ highContrast, maxWidth, minWidth, theme: baseTheme, width }) => {
+  ({ border, borderless, highContrast, maxWidth, minWidth, theme: baseTheme, width }) => {
+    border = borderless ? 'none' : border;
+
     const theme = tableHeaderCellTheme(baseTheme);
     const fontSize = theme.TableHeaderCell_fontSize;
     const rtl = theme.direction === 'rtl';
@@ -158,7 +161,7 @@ export const TableHeaderCellRoot = styled('th', {
         [borderProperty]: 0,
 
         '&::before': {
-          [borderProperty]: borderVertical,
+          [borderProperty]: border ? border : borderVertical,
           bottom: 0,
           content: '""',
           [positionProperty]: 0,
