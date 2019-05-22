@@ -7,7 +7,7 @@ import type { StyledComponent } from '@emotion/styled-base/src/utils';
 
 export const Link: StyledComponent<{ [key: string]: any }> = styled('a', {
   shouldForwardProp: (prop) => isPropValid(prop)
-})(({ variant, theme: baseTheme }) => {
+})(({ fontSize, textDecoration, underline, variant, theme: baseTheme }) => {
   let theme = linkTheme(baseTheme);
 
   if (variant) {
@@ -22,13 +22,17 @@ export const Link: StyledComponent<{ [key: string]: any }> = styled('a', {
       };
   }
 
+  if (!textDecoration && underline) {
+    textDecoration = 'underline';
+  }
+
   return {
     color: theme.Link_color,
     textDecoration: 'none',
 
     '&:hover': {
       color: theme.Link_color_hover,
-      textDecoration: 'underline'
+      textDecoration: textDecoration || 'underline'
     },
     '&:focus': {
       color: theme.Link_color_focus,
@@ -39,6 +43,11 @@ export const Link: StyledComponent<{ [key: string]: any }> = styled('a', {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/:active
     '&:active': {
       color: theme.Link_color_active
-    }
+    },
+
+    /* TargetX Custom Styles */
+    cursor: theme.Link_cursor,
+    ...(fontSize && { fontSize }),
+    ...(textDecoration && { textDecoration })
   };
 });

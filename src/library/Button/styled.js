@@ -11,8 +11,8 @@ import type { ButtonProps } from './types';
 import type { StyledComponent } from '@emotion/styled-base/src/utils';
 
 const chooseColor = ({ disabled, primary, minimal }: ButtonProps, theme) => {
-  if (disabled) {
-    return theme.color_disabled;
+  if (disabled && !minimal) {
+    return theme.Button_color_primary;
   } else if (primary) {
     return theme.Button_color_primary;
   } else if (minimal) {
@@ -64,19 +64,30 @@ export const Content: StyledComponent<{ [key: string]: any }> = styled('span', {
 });
 
 export const Inner: StyledComponent<{ [key: string]: any }> = styled('span')({
+  shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
+})(({ justifyContent }) => ({
   alignItems: 'center',
   display: 'inline-flex',
-  justifyContent: 'center',
+  justifyContent: justifyContent || 'center',
   maxHeight: '100%',
   pointerEvents: 'none',
   width: '100%'
-});
+}));
 
 export const Button: StyledComponent<{ [key: string]: any }> = styled(
   'button',
   { shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop) }
 )(
   ({
+    margin,
+    marginBottom,
+    marginHorizontal,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginVertical,
+    width,
+
     circular,
     disabled,
     fullWidth,
@@ -115,9 +126,11 @@ export const Button: StyledComponent<{ [key: string]: any }> = styled(
     return {
       ...componentStyleReset(baseTheme),
 
+      opacity: disabled && 0.5,
+
       backgroundColor: (() => {
         if (disabled && !minimal) {
-          return theme.backgroundColor_disabled;
+          return theme.Button_backgroundColor_primary;
         } else if (primary) {
           return theme.Button_backgroundColor_primary;
         } else if (minimal) {
@@ -151,7 +164,7 @@ export const Button: StyledComponent<{ [key: string]: any }> = styled(
           : `0 ${theme.Button_paddingHorizontal}`,
       textDecoration: 'none',
       verticalAlign: 'middle',
-      width: fullWidth && '100%',
+      width: fullWidth ? '100%' : width,
       '&:focus': !disabled && {
         backgroundColor: (() => {
           if (primary) {
@@ -219,7 +232,7 @@ export const Button: StyledComponent<{ [key: string]: any }> = styled(
 
       '& [role="img"]': {
         boxSizing: 'content-box',
-        color: disabled || primary ? null : theme.ButtonIcon_color,
+        color: disabled || primary || minimal ? null : theme.ButtonIcon_color,
         display: 'block',
         flexShrink: 0
       },
@@ -234,7 +247,22 @@ export const Button: StyledComponent<{ [key: string]: any }> = styled(
 
       '& [role="img"]:only-child': {
         margin: 0
-      }
+      },
+
+      /* TargetX Custom Styles */
+      ...(margin && { margin }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginHorizontal && {
+        marginLeft: marginHorizontal,
+        marginRight: marginHorizontal
+      }),
+      ...(marginLeft && { marginLeft }),
+      ...(marginRight && { marginRight }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      })
     };
   }
 );
