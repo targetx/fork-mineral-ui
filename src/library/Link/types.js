@@ -8,6 +8,11 @@ import type {
 } from '../themes/types';
 
 export type LinkProps = {
+  /* TargetX Custom Props */
+  textDecoration?: string,
+  underline?: boolean,
+
+  /* Built-In Props */
   children?: React$Node,
   href?: string,
   variant?: $Keys<typeof VARIANT>
