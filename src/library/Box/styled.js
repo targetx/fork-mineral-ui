@@ -59,7 +59,7 @@ const getSpacingStyles = (
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
     ['height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ backgroundColor, borderBottom, borderRadius, borderTop, overflow, position, scrollable, breakpoints, height, inline, theme, width, ...restProps }) => {
+})(({ backgroundColor, border, borderBottom, borderRadius, borderTop, overflow, position, scrollable, breakpoints, height, inline, theme, width, ...restProps }) => {
   const rtl = theme.direction === 'rtl';
 
   const mapValueToProperty = (
@@ -102,6 +102,7 @@ export const BoxRoot = styled('div', {
 
     /* TargetX Custom Styles */
     ...(backgroundColor && { backgroundColor }),
+    ...(border && { border }),
     ...(borderBottom && { borderBottom }),
     ...(borderTop && { borderTop }),
     ...(overflow && { overflow }),
