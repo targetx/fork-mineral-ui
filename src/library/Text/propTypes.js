@@ -4,7 +4,7 @@ import { ALIGN, APPEARANCE, FONT_WEIGHT } from './constants';
 
 export const textPropTypes = {
   /* TargetX Custom Props */
-  altFont: string,
+  altFont: bool,
   bold: bool,
   fontFamily: string,
   fontSize: string,
