@@ -67,7 +67,7 @@ export const FormFieldsetRoot = styled('fieldset')(
       ...componentStyleReset(baseTheme),
 
       border: '1px solid transparent',
-      borderTopColor: theme.FormFieldset_borderColor,
+      // borderTopColor: theme.FormFieldset_borderColor,
       padding: 0,
 
       '& > legend': {
