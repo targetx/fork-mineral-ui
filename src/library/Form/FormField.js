@@ -99,7 +99,7 @@ export default class FormField extends Component<FormFieldProps> {
             <span {...labelTextProps}>{label}</span>
             {(required || secondaryText) && (
               <FormFieldSecondaryText secondaryText={secondaryText}>
-                {secondaryText ? secondaryText : requiredText}
+                {secondaryText || requiredText || null}
               </FormFieldSecondaryText>
             )}
           </FormFieldTextWrapper>
