@@ -95,7 +95,7 @@ export const FormFieldTextWrapper = styled('div')(
       justifyContent: 'space-between',
       marginBottom: theme.FormFieldLabel_marginBottom,
       ...(hideLabel ? hideVisually() : {}),
-      '& > *': {
+      '& > *:not(style)': {
         alignSelf: 'flex-end',
         display: 'inline-block'
       },
