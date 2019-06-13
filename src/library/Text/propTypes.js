@@ -9,6 +9,9 @@ export const textPropTypes = {
   fontFamily: string,
   fontSize: string,
   lineHeight: string,
+  marginBottom: oneOfType([number, string]),
+  marginTop: oneOfType([number, string]),
+  marginVertical: oneOfType([number, string]),
 
   /* Built-In Props */
   align: oneOf(Object.keys(ALIGN)),
