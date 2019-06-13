@@ -19,6 +19,9 @@ export type TextProps = {
   fontFamily?: string,
   fontSize?: string,
   lineHeight?: string,
+  marginBottom?: number | string,
+  marginTop?: number | string,
+  marginVertical?: number | string,
 
   /* Built-In Props */
   align?: Align,

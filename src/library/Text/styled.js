@@ -53,6 +53,9 @@ export const TextRoot = styled('p', {
     fontFamily,
     fontSize,
     lineHeight,
+    marginBottom,
+    marginTop,
+    marginVertical,
 
     /* Built-In Styles */
     align,
@@ -137,6 +140,12 @@ export const TextRoot = styled('p', {
       ...(fontFamily && { fontFamily }),
       ...(fontSize && { fontSize }),
       ...(lineHeight && { lineHeight }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      })
     };
   }
 );
