@@ -8,8 +8,18 @@ import {
   formFieldsetTheme
 } from './themes';
 
-export const FormFieldRoot = styled('div')(({ theme }) =>
-  componentStyleReset(theme)
+export const FormFieldRoot = styled('div')(
+  ({ marginBottom, marginTop, marginVertical, theme }) => {
+    return {
+      ...componentStyleReset(theme),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      })
+    };
+  }
 );
 
 export const FormFieldCaption = styled('div')(
