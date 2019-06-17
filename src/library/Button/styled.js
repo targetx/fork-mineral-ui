@@ -75,6 +75,8 @@ export const Button = styled('button', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
 })(
   ({
+    width,
+
     circular,
     disabled,
     fullWidth,
@@ -151,7 +153,7 @@ export const Button = styled('button', {
           : `0 ${theme.Button_paddingHorizontal}`,
       textDecoration: 'none',
       verticalAlign: 'middle',
-      width: fullWidth && '100%',
+      width: fullWidth ? '100%' : width,
       '&:focus': !disabled && {
         backgroundColor: (() => {
           if (primary) {
