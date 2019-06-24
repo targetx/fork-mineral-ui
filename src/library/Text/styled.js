@@ -53,7 +53,11 @@ export const TextRoot = styled('p', {
     fontFamily,
     fontSize,
     lineHeight,
+    margin,
     marginBottom,
+    marginHorizontal,
+    marginLeft,
+    marginRight,
     marginTop,
     marginVertical,
 
@@ -140,7 +144,14 @@ export const TextRoot = styled('p', {
       ...(fontFamily && { fontFamily }),
       ...(fontSize && { fontSize }),
       ...(lineHeight && { lineHeight }),
+      ...(margin && { margin }),
       ...(marginBottom && { marginBottom }),
+      ...(marginHorizontal && {
+        marginLeft: marginHorizontal,
+        marginRight: marginHorizontal
+      }),
+      ...(marginLeft && { marginLeft }),
+      ...(marginRight && { marginRight }),
       ...(marginTop && { marginTop }),
       ...(marginVertical && {
         marginBottom: marginVertical,
