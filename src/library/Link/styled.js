@@ -5,7 +5,7 @@ import { linkTheme } from './themes';
 
 export const Link = styled('a', {
   shouldForwardProp: (prop) => isPropValid(prop)
-})(({ textDecoration, underline, variant, theme: baseTheme }) => {
+})(({ fontSize, textDecoration, underline, variant, theme: baseTheme }) => {
   let theme = linkTheme(baseTheme);
 
   if (variant) {
@@ -45,6 +45,7 @@ export const Link = styled('a', {
 
     /* TargetX Custom Styles */
     cursor: theme.Link_cursor,
+    ...(fontSize && { fontSize }),
     ...(textDecoration && { textDecoration })
   };
 });

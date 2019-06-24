@@ -9,6 +9,7 @@ import type {
 
 export type LinkProps = {
   /* TargetX Custom Props */
+  fontSize?: string,
   textDecoration?: string,
   underline?: boolean,
 

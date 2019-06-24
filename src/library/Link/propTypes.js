@@ -4,6 +4,7 @@ import { VARIANT } from './constants';
 
 export const linkPropTypes = {
   /* TargetX Custom Props */
+  fontSize: string,
   textDecoration: string,
   underline: bool,
 

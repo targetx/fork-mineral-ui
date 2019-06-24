@@ -8,7 +8,7 @@ export const textPropTypes = {
   bold: bool,
   fontFamily: string,
   fontSize: string,
-  lineHeight: string,
+  lineHeight: oneOfType([number, string]),
   marginBottom: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),

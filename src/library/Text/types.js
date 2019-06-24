@@ -18,7 +18,7 @@ export type TextProps = {
   bold?: boolean,
   fontFamily?: string,
   fontSize?: string,
-  lineHeight?: string,
+  lineHeight?: number | string,
   marginBottom?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
