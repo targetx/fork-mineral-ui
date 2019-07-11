@@ -130,7 +130,9 @@ export const TableHeaderCellRoot = styled('th', {
 
     return tableCellStyles({ theme, ...props });
   },
-  ({ highContrast, maxWidth, minWidth, theme: baseTheme, width }) => {
+  ({ border, borderless, highContrast, maxWidth, minWidth, theme: baseTheme, width }) => {
+    border = borderless ? 'none' : border;
+
     const theme = tableHeaderCellTheme(baseTheme);
     const fontSize = theme.TableHeaderCell_fontSize;
     const rtl = theme.direction === 'rtl';
@@ -158,7 +160,7 @@ export const TableHeaderCellRoot = styled('th', {
         [borderProperty]: 0,
 
         '&::before': {
-          [borderProperty]: borderVertical,
+          [borderProperty]: border ? border : borderVertical,
           bottom: 0,
           content: '""',
           [positionProperty]: 0,

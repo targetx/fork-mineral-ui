@@ -20,7 +20,7 @@ export const buttonTheme: ButtonThemeFn = (baseTheme) => ({
   Button_borderColor_focus: baseTheme.borderColor_theme_focus,
   Button_borderColor_hover: baseTheme.borderColor_theme_hover,
   Button_borderRadius: baseTheme.borderRadius_3,
-  Button_borderWidth: baseTheme.borderWidth_md,
+  Button_borderWidth: 1, // px,
   Button_boxShadow_focus: `0 0 0 1px ${baseTheme.boxShadow_focusInner}, 0 0 0 2px ${baseTheme.borderColor_theme_focus}`,
   Button_color: baseTheme.color_theme,
   Button_color_minimal: baseTheme.color_theme,
