@@ -18,7 +18,8 @@ export type ButtonGroupProps = {
   onChange?: (event: SyntheticEvent<HTMLButtonElement>) => void,
   onClick?: (event: SyntheticEvent<HTMLButtonElement>) => void,
   size?: $Keys<typeof SIZE>,
-  variant?: $Keys<typeof VARIANT>
+  variant?: $Keys<typeof VARIANT>,
+  border?: string
 };
 
 export type ButtonGroupState = {

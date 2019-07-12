@@ -22,5 +22,6 @@ export const buttonGroupPropTypes = {
   onChange: func,
   onClick: func,
   size: oneOf(Object.keys(SIZE)),
-  variant: oneOf(Object.keys(VARIANT))
+  variant: oneOf(Object.keys(VARIANT)),
+  border: string
 };

@@ -5,7 +5,7 @@ import { ignoreSsrWarning } from '../utils/emotion';
 import { buttonGroupTheme } from './themes';
 
 export const ButtonGroupRoot = styled('div')(
-  ({ fullWidth, theme: baseTheme, variant }) => {
+  ({ border, fullWidth, theme: baseTheme, variant }) => {
     let theme = buttonGroupTheme(baseTheme);
     if (variant) {
       // prettier-ignore
@@ -36,6 +36,7 @@ export const ButtonGroupRoot = styled('div')(
 
       '& button': {
         flexGrow: fullWidth && 1,
+        ...(border && { border }),
 
         '&:focus, &:active': {
           position: 'relative'
