@@ -247,7 +247,9 @@ export type TableHeaderCellProps = {
   maxWidth?: number | string,
   render?: RenderFn,
   textAlign?: ColumnAlign,
-  width?: number | string
+  width?: number | string,
+  borderless?: boolean,
+  border?: number | string
 };
 
 export type TableHeaderCellDefaultProps = {
