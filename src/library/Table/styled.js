@@ -24,6 +24,7 @@ import { SORT } from './constants';
 const REGEX_IS_EM_VALUE = /\d+em$/;
 
 const tableCellStyles = ({
+  verticalAlign,
   density,
   highContrast,
   noPadding,
@@ -53,7 +54,7 @@ const tableCellStyles = ({
     fontWeight: 'inherit',
     padding: noPadding ? 0 : `${paddingVertical} ${paddingHorizontal}`,
     textAlign: rtlTextAlign(textAlign || 'start', theme.direction),
-    verticalAlign: theme.TableCell_verticalAlign,
+    verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
 
     ['&:not(:first-child)' + ignoreSsrWarning]: {
       [borderProperty]: borderVertical
