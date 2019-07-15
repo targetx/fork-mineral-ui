@@ -195,6 +195,10 @@ type TableThemeKeys = {|
 |};
 
 export type TableCellProps = {
+  /* TargetX Custom Props */
+  verticalAlign: string,
+
+  /* Built-In Props */
   as?: string,
   children?: React$Node,
   columnKey?: string,
