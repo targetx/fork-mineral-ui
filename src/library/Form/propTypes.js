@@ -17,6 +17,7 @@ export const formFieldPropTypes = {
   marginBottom: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),
+  width: oneOfType([number, string]),
 
   /* Built-In Props */
   caption: oneOfType([string, element]),

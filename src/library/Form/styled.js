@@ -9,7 +9,7 @@ import {
 } from './themes';
 
 export const FormFieldRoot = styled('div')(
-  ({ marginBottom, marginTop, marginVertical, theme }) => {
+  ({ marginBottom, marginTop, marginVertical, width, theme }) => {
     return {
       ...componentStyleReset(theme),
       ...(marginBottom && { marginBottom }),
@@ -17,7 +17,8 @@ export const FormFieldRoot = styled('div')(
       ...(marginVertical && {
         marginBottom: marginVertical,
         marginTop: marginVertical
-      })
+      }),
+      ...(width && { width })
     };
   }
 );

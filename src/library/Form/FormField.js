@@ -25,6 +25,7 @@ export default class FormField extends Component<FormFieldProps> {
       marginBottom,
       marginTop,
       marginVertical,
+      width,
 
       caption,
       children,
@@ -44,6 +45,7 @@ export default class FormField extends Component<FormFieldProps> {
       marginBottom,
       marginTop,
       marginVertical,
+      width,
 
       className,
       ...otherRootProps

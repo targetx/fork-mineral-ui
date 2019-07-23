@@ -12,6 +12,7 @@ export type FormFieldProps = {
   marginBottom?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
+  width?: number | string,
 
   /* Built-in Props */
   caption?: string | React$Element<*>,
