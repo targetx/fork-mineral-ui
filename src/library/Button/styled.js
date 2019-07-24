@@ -221,7 +221,7 @@ export const Button = styled('button', {
 
       '& [role="img"]': {
         boxSizing: 'content-box',
-        color: disabled || primary ? null : theme.ButtonIcon_color,
+        color: disabled || primary || minimal ? null : theme.ButtonIcon_color,
         display: 'block',
         flexShrink: 0
       },
