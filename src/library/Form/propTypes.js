@@ -14,6 +14,7 @@ import { VARIANT } from './constants';
 
 export const formFieldPropTypes = {
   /* TargetX Custom Props */
+  labelFor: string,
   marginBottom: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),

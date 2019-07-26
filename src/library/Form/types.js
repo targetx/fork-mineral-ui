@@ -9,6 +9,7 @@ import type {
 
 export type FormFieldProps = {
   /* TargetX Custom Props */
+  labelFor?: string,
   marginBottom?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,

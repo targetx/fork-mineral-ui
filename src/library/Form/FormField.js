@@ -22,6 +22,7 @@ export default class FormField extends Component<FormFieldProps> {
 
   render() {
     const {
+      labelFor,
       marginBottom,
       marginTop,
       marginVertical,
@@ -56,6 +57,8 @@ export default class FormField extends Component<FormFieldProps> {
     const isGroup = this.isGroup();
     const Label = isGroup ? 'div' : 'label';
 
+    const labelProps = Label === 'label' && labelFor ? { htmlFor: labelFor } : {};
+    
     const textWrapperProps = {
       hideLabel,
       key: `${this.id}-textWrapper`
@@ -100,7 +103,7 @@ export default class FormField extends Component<FormFieldProps> {
 
     return (
       <Root {...rootProps}>
-        <Label>
+        <Label {...labelProps}>
           <FormFieldTextWrapper {...textWrapperProps}>
             <span {...labelTextProps}>{label}</span>
             {(required || secondaryText) && (
