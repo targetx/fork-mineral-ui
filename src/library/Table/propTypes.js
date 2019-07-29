@@ -51,6 +51,8 @@ export const tablePropTypes = {
   /* TargetX Custom Props */
   border: string,
   borderRadius: string,
+  fullWidth: bool,
+  width: 'string',
 
   /* Built-In Props */
   columns,

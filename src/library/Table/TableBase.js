@@ -39,7 +39,9 @@ export default class TableBase extends Component<
     const {
       border,
       borderRadius,
-      
+      fullWidth,
+      width,
+
       columns,
       data,
       density,
@@ -58,6 +60,7 @@ export default class TableBase extends Component<
       titleAs,
       ...rootProps
     } = this.props;
+
     const appearanceProps = {
       density,
       highContrast,
@@ -109,6 +112,8 @@ export default class TableBase extends Component<
       const containerProps = {
         border,
         borderRadius,
+        fullWidth,
+        width,
         'aria-labelledby': this.titleId,
         role: 'group',
         scrollX: true
