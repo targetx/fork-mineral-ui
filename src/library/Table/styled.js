@@ -77,9 +77,10 @@ export const TableOverflowContainer = themed(OverflowContainer)(
     )
 );
 
-export const TableRoot = styled('table')(({ theme }) => ({
+export const TableRoot = styled('table')(({ backgroundColor, theme }) => ({
   ...componentStyleReset(theme),
 
+  backgroundColor: backgroundColor ? backgroundColor : 'white',
   borderCollapse: 'collapse',
   borderSpacing: 0,
   width: '100%'

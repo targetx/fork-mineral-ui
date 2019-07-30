@@ -49,10 +49,11 @@ const messages = shape({
 
 export const tablePropTypes = {
   /* TargetX Custom Props */
+  backgroundColor: string,
   border: string,
   borderRadius: string,
   fullWidth: bool,
-  width: 'string',
+  width: string,
 
   /* Built-In Props */
   columns,
