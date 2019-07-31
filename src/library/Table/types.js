@@ -288,6 +288,11 @@ export type TableHeaderRowProps = {
 };
 
 export type TableRowProps = {
+  /* TargetX Custom Props */
+  clickable: boolean,
+  cursor: string,
+
+  /* Built-In Props */
   children: React$Node,
   isSelected?: boolean,
   isSelectable?: boolean,

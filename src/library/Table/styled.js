@@ -177,10 +177,12 @@ export const TableHeaderCellRoot = styled('th', {
 );
 
 export const TableRowRoot = styled('tr')(
-  ({ highContrast, isSelected, theme: baseTheme, striped }) => {
+  ({ clickable, cursor, highContrast, isSelected, theme: baseTheme, striped }) => {
     const theme = tableRowTheme(baseTheme);
 
     return {
+      ...(clickable ? { cursor: 'pointer' } : {}),
+      ...(cursor ? { cursor } : {}),
       backgroundColor: (() => {
         if (isSelected) {
           if (highContrast) {

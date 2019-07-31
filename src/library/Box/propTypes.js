@@ -21,6 +21,7 @@ export const boxPropTypes = {
   overflow: string,
   position: string,
   scrollable: bool,
+  zIndex: oneOfType([string, number]),
 
   /* Built-In Props */
   breakpoints: arrayOf(oneOfType([number, string])),
