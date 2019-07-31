@@ -65,7 +65,8 @@ export const FormFieldSecondaryText = styled('span')(
         ? theme.FormFieldSecondaryText_color
         : theme.FormFieldSecondaryText_color_required,
       fontSize: theme.FormFieldSecondaryText_fontSize,
-      fontWeight: theme.FormFieldSecondaryText_fontWeight
+      fontWeight: theme.FormFieldSecondaryText_fontWeight,
+      padding: '1px'
     };
   }
 );
