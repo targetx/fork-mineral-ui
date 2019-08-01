@@ -10,10 +10,12 @@ export const spacingPropType = oneOfType([
 export const boxPropTypes = {
   /* TargetX Custom Props */
   backgroundColor: string,
+  blur: number,
   border: string,
   borderBottom: string,
   borderRadius: oneOfType([string, arrayOf(string)]),
   borderTop: string,
+  filter: string,
   maxHeight: oneOfType([string, number]),
   maxWidth: oneOfType([string, number]),
   minHeight: oneOfType([string, number]),
