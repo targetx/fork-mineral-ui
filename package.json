@@ -46,7 +46,7 @@
     }
   },
   "dependencies": {
-    "@targetx/mineral-ui-tokens": "0.4.0-targetx.2",
+    "@targetx/mineral-ui-tokens": "0.4.0-targetx.3",
     "exenv": "1.2.2",
     "focus-trap-react": "3.1.2",
     "fontfaceobserver": "2.0.13",
