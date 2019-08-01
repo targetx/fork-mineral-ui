@@ -185,7 +185,7 @@ export default {
   typography: {
     color: '#222222',
     color_inverted: '#ffffff',
-    color_disabled: '#ffffff',
+    color_disabled: '#a6a6a6',
     color_mouse: '#575757',
     color_readOnly: '#222222',
     color_required: '#cc0b1f',
