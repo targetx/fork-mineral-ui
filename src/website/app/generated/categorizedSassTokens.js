@@ -188,7 +188,7 @@ export default {
   typography: {
     '$mnrl-color': '#222222',
     '$mnrl-color-inverted': '#ffffff',
-    '$mnrl-color-disabled': '#ffffff',
+    '$mnrl-color-disabled': '#a6a6a6',
     '$mnrl-color-mouse': '#575757',
     '$mnrl-color-readOnly': '#222222',
     '$mnrl-color-required': '#cc0b1f',

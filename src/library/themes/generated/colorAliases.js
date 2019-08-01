@@ -64,7 +64,7 @@ export default {
   borderColor_transparent: 'transparent',
   color: 'gray_100',
   color_inverted: 'white',
-  color_disabled: 'white',
+  color_disabled: 'gray_40',
   color_mouse: 'gray_80',
   color_readOnly: 'gray_100',
   color_required: 'red_60',
