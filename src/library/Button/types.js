@@ -11,6 +11,8 @@ type Size = $Keys<typeof SIZE>;
 type Variant = $Keys<typeof VARIANT>;
 
 export type ButtonProps = {
+  backgroundColor?: string,
+  color?: string,
   width?: string,
 
   children?: React$Node,

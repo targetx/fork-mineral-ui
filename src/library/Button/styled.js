@@ -75,6 +75,8 @@ export const Button = styled('button', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
 })(
   ({
+    backgroundColor,
+    color,
     width,
 
     circular,
@@ -111,7 +113,7 @@ export const Button = styled('button', {
         };
     }
 
-    const color = chooseColor({ disabled, primary, minimal }, theme);
+    color = color || chooseColor({ disabled, primary, minimal }, theme);
     return {
       ...componentStyleReset(baseTheme),
 
@@ -125,7 +127,7 @@ export const Button = styled('button', {
         } else if (minimal) {
           return 'transparent';
         } else {
-          return theme.Button_backgroundColor;
+          return backgroundColor || theme.Button_backgroundColor;
         }
       })(),
       borderColor:

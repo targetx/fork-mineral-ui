@@ -3,6 +3,8 @@ import { bool, element, func, node, oneOf, string } from 'prop-types';
 import { SIZE, VARIANT } from './constants';
 
 export const buttonPropTypes = {
+  backgroundColor: string,
+  color: string,
   width: string,
 
   children: node,
