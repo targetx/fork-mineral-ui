@@ -38,14 +38,9 @@ export const TextInputRoot = styled(ThemedFauxControl)(
       width: '100%',
 
       '& [role="img"]': {
-        color: theme.TextInputIcon_color,
         display: 'block',
         flex: '0 0 auto',
-        margin: `0 ${theme.TextInputIcon_marginHorizontal}`,
-
-        '&:last-of-type': {
-          color: theme.TextInputIcon_color
-        }
+        margin: `0 ${theme.TextInputIcon_marginHorizontal}`
       }
     };
   }
