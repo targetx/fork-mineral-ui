@@ -10,8 +10,8 @@ import { buttonTheme } from './themes';
 import type { ButtonProps } from './types';
 
 const chooseColor = ({ disabled, primary, minimal }: ButtonProps, theme) => {
-  if (disabled) {
-    return theme.color_disabled;
+  if (disabled && !minimal) {
+    return theme.Button_color_primary;
   } else if (primary) {
     return theme.Button_color_primary;
   } else if (minimal) {
