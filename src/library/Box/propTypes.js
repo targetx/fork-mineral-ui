@@ -9,6 +9,7 @@ export const spacingPropType = oneOfType([
 
 export const boxPropTypes = {
   /* TargetX Custom Props */
+  background: string,
   backgroundColor: string,
   blur: number,
   border: string,
