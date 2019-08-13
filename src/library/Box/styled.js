@@ -59,7 +59,7 @@ const getSpacingStyles = (
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
     ['filter', 'height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ background, backgroundColor, blur, border, borderBottom, borderRadius, borderTop, filter, maxHeight, maxWidth, minHeight, minWidth, overflow, position, scrollable, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
+})(({ background, backgroundColor, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, filter, maxHeight, maxWidth, minHeight, minWidth, overflow, position, scrollable, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
   const rtl = theme.direction === 'rtl';
 
   const mapValueToProperty = (
@@ -106,6 +106,8 @@ export const BoxRoot = styled('div', {
     ...(blur && { filter: `blur(${blur}px)` }),
     ...(border && { border }),
     ...(borderBottom && { borderBottom }),
+    ...(borderLeft && { borderLeft }),
+    ...(borderRight && { borderRight }),
     ...(borderTop && { borderTop }),
     ...(filter && { filter }),
     ...(maxHeight && { maxHeight: getMeasurement(maxHeight) }),
