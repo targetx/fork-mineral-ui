@@ -62,14 +62,16 @@ export const Content = styled('span', {
   };
 });
 
-export const Inner = styled('span')({
+export const Inner = styled('span', {
+  shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
+})(({ justifyContent }) => ({
   alignItems: 'center',
   display: 'inline-flex',
-  justifyContent: 'center',
+  justifyContent: justifyContent || 'center',
   maxHeight: '100%',
   pointerEvents: 'none',
   width: '100%'
-});
+}));
 
 export const Button = styled('button', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
