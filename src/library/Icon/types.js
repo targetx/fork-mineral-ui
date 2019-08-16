@@ -13,6 +13,13 @@ export type IconProps = {
   /* TargetX Custom Props */
   clickable?: boolean,
   cursor?: string,
+  margin?: number | string,
+  marginBottom?: number | string,
+  marginHorizontal?: number | string,
+  marginLeft?: number | string,
+  marginRight?: number | string,
+  marginTop?: number | string,
+  marginVertical?: number | string,
 
   /* Built-In Props */
   children?: React$Node,
