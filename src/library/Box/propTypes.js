@@ -18,6 +18,7 @@ export const boxPropTypes = {
   borderRadius: oneOfType([string, arrayOf(string)]),
   borderRight: string,
   borderTop: string,
+  cursor: string,
   filter: string,
   maxHeight: oneOfType([string, number]),
   maxWidth: oneOfType([string, number]),
