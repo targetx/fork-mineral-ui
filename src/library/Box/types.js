@@ -17,6 +17,7 @@ export type BoxProps = {
   borderRadius?: string | Array<string>,
   borderRight?: string,
   borderTop?: string,
+  boxShadow?: string,
   cursor?: string,
   filter?: string,
   maxHeight?: string | number,
