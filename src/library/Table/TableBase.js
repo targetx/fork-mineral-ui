@@ -40,6 +40,7 @@ export default class TableBase extends Component<
       border,
       borderRadius,
       fullWidth,
+      hoverable,
       width,
 
       columns,
@@ -64,6 +65,7 @@ export default class TableBase extends Component<
     const appearanceProps = {
       density,
       highContrast,
+      hoverable,
       striped
     };
     const tableHeaderRowProps = {

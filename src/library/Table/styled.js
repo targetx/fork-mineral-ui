@@ -183,7 +183,7 @@ export const TableHeaderCellRoot = styled('th', {
 );
 
 export const TableRowRoot = styled('tr')(
-  ({ clickable, cursor, highContrast, isSelected, theme: baseTheme, striped }) => {
+  ({ clickable, cursor, highContrast, hoverable, isSelected, theme: baseTheme, striped }) => {
     const theme = tableRowTheme(baseTheme);
 
     return {
@@ -210,19 +210,25 @@ export const TableRowRoot = styled('tr')(
 
       '*:not(thead) > &:hover': {
         backgroundColor: (() => {
-          if (isSelected) {
-            if (highContrast) {
-              return theme.TableRow_backgroundColor_highContrast_selectedHover;
+          if (hoverable) {
+            if (isSelected) {
+              if (highContrast) {
+                return theme.TableRow_backgroundColor_highContrast_selectedHover;
+              }
+              return theme.TableRow_backgroundColor_selectedHover;
             }
-            return theme.TableRow_backgroundColor_selectedHover;
+            return theme.TableRow_backgroundColor_hover;
           }
-          return theme.TableRow_backgroundColor_hover;
         })()
       },
 
       ['&:nth-child(even):not(:hover)' + ignoreSsrWarning]: {
         backgroundColor:
           !isSelected && striped ? theme.TableRow_backgroundColor_striped : null
+      },
+
+      ['&:nth-child(even):hover']: {
+        backgroundColor: !hoverable ? theme.TableRow_backgroundColor_striped : null
       },
 
       ...(isSelected

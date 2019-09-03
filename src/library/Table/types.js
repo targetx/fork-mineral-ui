@@ -54,6 +54,7 @@ export type TableBaseProps = {
   border?: string,
   borderRadius?: string,
   fullWidth?: boolean,
+  hoverable?: boolean,
   width?: string,
 
   columns: Columns,
