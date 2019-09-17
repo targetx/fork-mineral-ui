@@ -1,26 +1,27 @@
-import { ElementType, ReactElement, ReactNode, SyntheticEvent } from 'react';
-
-type Size = 'small' | 'medium' | 'large' | 'jumbo';
-type Variant = 'danger' | 'grayscale' | 'success' | 'warning';
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  ElementType,
+  ReactElement
+} from 'react';
 
 export declare namespace Button {
-  export interface Props {
+  export interface Props
+    extends DetailedHTMLProps<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    > {
     as?: ElementType;
-    children?: ReactNode;
     circular?: boolean;
     css?: { [key: string]: any };
-    disabled?: boolean;
     fullWidth?: boolean;
-    href?: string;
     iconEnd?: ReactElement;
     iconStart?: ReactElement;
     justifyContent?: string;
     minimal?: boolean;
-    onClick?: (event: SyntheticEvent) => void;
     primary?: boolean;
-    size?: Size;
-    type?: string;
-    variant?: Variant;
+    size?: string;
+    variant?: string;
     width?: string;
   }
 }
