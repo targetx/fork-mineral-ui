@@ -15,6 +15,7 @@ export declare namespace Button {
     circular?: boolean;
     css?: { [key: string]: any };
     fullWidth?: boolean;
+    href?: string;
     iconEnd?: ReactElement;
     iconStart?: ReactElement;
     justifyContent?: string;
