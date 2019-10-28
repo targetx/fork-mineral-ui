@@ -21,7 +21,7 @@ const ThemedFauxControl = themed(FauxControl)(({ theme: baseTheme }) =>
 );
 
 export const TextInputRoot = styled(ThemedFauxControl)(
-  ({ theme: baseTheme, variant }) => {
+  ({ disabled, theme: baseTheme, variant }) => {
     let theme = textInputTheme(baseTheme);
 
     if (variant) {
@@ -33,7 +33,7 @@ export const TextInputRoot = styled(ThemedFauxControl)(
 
     return {
       alignItems: 'center',
-      cursor: 'text',
+      ...(!disabled && { cursor: 'text' }),
       display: 'flex',
       width: '100%',
 

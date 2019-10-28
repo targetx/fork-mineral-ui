@@ -21,7 +21,6 @@ const variantIcons: VariantIcons = {
 };
 
 const getIcons = ({
-  disabled,
   iconStart,
   iconEnd,
   // readOnly,
@@ -29,10 +28,6 @@ const getIcons = ({
   variant,
   variantIcons
 }) => {
-  if (disabled) {
-    return [];
-  }
-
   const iconSize = size || SIZE.large;
   const startIcon =
     iconStart &&
