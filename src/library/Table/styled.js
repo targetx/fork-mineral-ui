@@ -25,6 +25,7 @@ const REGEX_IS_EM_VALUE = /\d+em$/;
 
 const tableCellStyles = ({
   clickable,
+  color,
   cursor,
   verticalAlign,
 
@@ -59,6 +60,7 @@ const tableCellStyles = ({
     textAlign: rtlTextAlign(textAlign || 'start', theme.direction),
 
     ...(clickable ? { cursor: 'pointer' } : {}),
+    ...(color ? { color } : {}),
     ...(cursor ? { cursor } : {}),
     verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
 
