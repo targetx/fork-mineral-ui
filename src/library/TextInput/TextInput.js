@@ -10,6 +10,7 @@ const TextInput = (props: TextInputProps) => {
   const {
     /* TargetX Custom props */
     borderRadius,
+    textAlign,
 
     className,
     disabled,
@@ -27,6 +28,9 @@ const TextInput = (props: TextInputProps) => {
     ...restProps
   } = props;
   const inputProps = {
+    /* TargetX Custom props */
+    textAlign,
+
     'aria-invalid': invalid,
     'aria-required': required,
     controlRef: inputRef,
@@ -35,7 +39,7 @@ const TextInput = (props: TextInputProps) => {
     required,
     ...restProps // Note: Props are spread to Input rather than Root
   };
-
+  
   const rootProps = {
     /* TargetX Custom props */
     borderRadius,

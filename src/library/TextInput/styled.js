@@ -48,7 +48,7 @@ export const TextInputRoot = styled(ThemedFauxControl)(
 );
 
 export const Input = styled('input')(
-  ({ controlSize, size: nonHtmlSize, theme: baseTheme }) => {
+  ({ textAlign, controlSize, size: nonHtmlSize, theme: baseTheme }) => {
     const theme = textInputTheme(baseTheme);
 
     const size = controlSize || nonHtmlSize;
@@ -74,7 +74,10 @@ export const Input = styled('input')(
         '&::-webkit-search-decoration': {
           WebkitAppearance: 'none'
         }
-      }
+      },
+
+      /* TargetX Custom Styles */
+      ...(textAlign && { textAlign })
     };
   }
 );
