@@ -59,7 +59,7 @@ const getSpacingStyles = (
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
     ['filter', 'height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ background, backgroundColor, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, boxShadow, cursor, filter, maxHeight, maxWidth, minHeight, minWidth, overflow, position, scrollable, top, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
+})(({ background, backgroundColor, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, bottom, boxShadow, cursor, filter, left, maxHeight, maxWidth, minHeight, minWidth, overflow, position, right, scrollable, top, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
   const rtl = theme.direction === 'rtl';
 
   const mapValueToProperty = (
@@ -109,15 +109,18 @@ export const BoxRoot = styled('div', {
     ...(borderLeft && { borderLeft }),
     ...(borderRight && { borderRight }),
     ...(borderTop && { borderTop }),
+    ...(bottom && { bottom }),
     ...(boxShadow && { boxShadow }),
     ...(cursor && { cursor }),
     ...(filter && { filter }),
+    ...(left && { left }),
     ...(maxHeight && { maxHeight: getMeasurement(maxHeight) }),
     ...(maxWidth && { maxWidth: getMeasurement(maxWidth) }),
     ...(minHeight && { minHeight: getMeasurement(minHeight) }),
     ...(minWidth && { minWidth: getMeasurement(minWidth) }),
     ...(overflow && { overflow }),
     ...(position && { position }),
+    ...(right && { right }),
     ...(scrollable && { overflow: 'scroll' }),
     ...(top && { top }),
     ...(zIndex && { zIndex })
