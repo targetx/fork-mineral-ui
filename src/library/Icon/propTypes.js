@@ -3,8 +3,10 @@ import { bool, node, number, oneOfType, string } from 'prop-types';
 
 export const iconPropTypes = {
   /* TargetX Custom Props */
+  bottom: string,
   clickable: bool,
   cursor: string,
+  left: string,
   margin: oneOfType([number, string]),
   marginBottom: oneOfType([number, string]),
   marginHorizontal: oneOfType([number, string]),
@@ -12,6 +14,8 @@ export const iconPropTypes = {
   marginRight: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),
+  right: string,
+  top: string,
   verticalAlign: string,
 
   /* Built-In Props */

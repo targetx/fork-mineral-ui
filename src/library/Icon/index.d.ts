@@ -2,9 +2,11 @@ import React, { SVGProps } from 'react';
 
 export declare namespace Icon {
   interface Props extends SVGProps<SVGSVGElement> {
+    bottom?: string;
     clickable?: boolean;
     css?: { [key: string]: any };
     cursor?: string;
+    left?: string;
     margin?: number | string;
     marginBottom?: number | string;
     marginHorizontal?: number | string;
@@ -12,6 +14,8 @@ export declare namespace Icon {
     marginRight?: number | string;
     marginTop?: number | string;
     marginVertical?: number | string;
+    right?: string;
+    top?: string;
     size?: number | string;
     verticalAlign?: string;
   }

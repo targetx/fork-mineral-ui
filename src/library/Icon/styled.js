@@ -8,8 +8,10 @@ export const IconRoot = styled('svg', {
     ['color', 'size'].indexOf(prop) === -1 && isPropValid(prop)
 })(({
     /* TargetX Custom Styles */
+    bottom,
     clickable,
     cursor,
+    left,
     margin,
     marginBottom,
     marginHorizontal,
@@ -17,6 +19,8 @@ export const IconRoot = styled('svg', {
     marginRight,
     marginTop,
     marginVertical,
+    right,
+    top,
     verticalAlign,
 
     /* Built-In Styles */
@@ -36,8 +40,10 @@ export const IconRoot = styled('svg', {
     width: theme[`Icon_size_${size}`] || size,
 
     /* TargetX Custom Styles */
+    ...(bottom && { bottom }),
     ...(clickable ? { cursor: 'pointer' } : {}),
     ...(cursor ? { cursor } : {}),
+    ...(left && { left }),
     ...(margin && { margin }),
     ...(marginBottom && { marginBottom }),
     ...(marginHorizontal && {
@@ -51,6 +57,8 @@ export const IconRoot = styled('svg', {
       marginBottom: marginVertical,
       marginTop: marginVertical
     }),
+    ...(right && { right }),
+    ...(top && { top }),
     ...(verticalAlign && { verticalAlign })
   };
 });

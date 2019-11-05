@@ -11,8 +11,10 @@ type Size = $Keys<typeof SIZE> | number | string;
 
 export type IconProps = {
   /* TargetX Custom Props */
+  bottom?: string,
   clickable?: boolean,
   cursor?: string,
+  left?: string,
   margin?: number | string,
   marginBottom?: number | string,
   marginHorizontal?: number | string,
@@ -20,6 +22,8 @@ export type IconProps = {
   marginRight?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
+  right?: string,
+  top?: string,
   verticalAlign?: string,
 
   /* Built-In Props */
