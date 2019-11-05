@@ -14,6 +14,7 @@ export const iconPropTypes = {
   marginRight: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),
+  position: string,
   right: string,
   top: string,
   verticalAlign: string,

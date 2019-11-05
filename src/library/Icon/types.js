@@ -22,6 +22,7 @@ export type IconProps = {
   marginRight?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
+  position?: string,
   right?: string,
   top?: string,
   verticalAlign?: string,

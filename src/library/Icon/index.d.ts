@@ -14,6 +14,7 @@ export declare namespace Icon {
     marginRight?: number | string;
     marginTop?: number | string;
     marginVertical?: number | string;
+    position?: string;
     right?: string;
     top?: string;
     size?: number | string;
