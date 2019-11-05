@@ -17,6 +17,7 @@ export const IconRoot = styled('svg', {
     marginRight,
     marginTop,
     marginVertical,
+    verticalAlign,
 
     /* Built-In Styles */
     color,
@@ -49,6 +50,7 @@ export const IconRoot = styled('svg', {
     ...(marginVertical && {
       marginBottom: marginVertical,
       marginTop: marginVertical
-    })
+    }),
+    ...(verticalAlign && { verticalAlign })
   };
 });

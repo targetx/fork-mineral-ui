@@ -20,6 +20,7 @@ export type IconProps = {
   marginRight?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
+  verticalAlign?: string,
 
   /* Built-In Props */
   children?: React$Node,

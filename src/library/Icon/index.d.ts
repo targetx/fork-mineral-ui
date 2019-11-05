@@ -13,6 +13,7 @@ export declare namespace Icon {
     marginTop?: number | string;
     marginVertical?: number | string;
     size?: number | string;
+    verticalAlign?: string;
   }
 }
 
