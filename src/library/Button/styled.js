@@ -77,6 +77,13 @@ export const Button = styled('button', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
 })(
   ({
+    margin,
+    marginBottom,
+    marginHorizontal,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginVertical,
     width,
 
     circular,
@@ -238,7 +245,22 @@ export const Button = styled('button', {
 
       '& [role="img"]:only-child': {
         margin: 0
-      }
+      },
+
+      /* TargetX Custom Styles */
+      ...(margin && { margin }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginHorizontal && {
+        marginLeft: marginHorizontal,
+        marginRight: marginHorizontal
+      }),
+      ...(marginLeft && { marginLeft }),
+      ...(marginRight && { marginRight }),
+      ...(marginTop && { marginTop }),
+      ...(marginVertical && {
+        marginBottom: marginVertical,
+        marginTop: marginVertical
+      })
     };
   }
 );
