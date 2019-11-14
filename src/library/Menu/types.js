@@ -8,6 +8,9 @@ import type {
 } from '../themes/types';
 
 export type MenuItemType = {
+  /* TargetX Custom Props */
+  testID?: string,
+
   iconEnd?: React$Element<*>,
   iconStart?: React$Element<*>,
   disabled?: boolean,

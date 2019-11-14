@@ -73,9 +73,11 @@ export default class MenuItem extends PureComponent<MenuItemProps> {
   }
 
   getItemProps: MenuItemPropGetter = (props = {}) => {
-    const { disabled, onClick, render, tabIndex, ...restProps } = props;
-
+    const { testID, disabled, onClick, render, tabIndex, ...restProps } = props;
+    
     return {
+      ...(testID ? { ['data-testid']: testID } : {}),
+
       ...(render ? restProps : {}),
       'aria-disabled': disabled,
       disabled,

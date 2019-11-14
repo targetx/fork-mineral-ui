@@ -15,6 +15,9 @@ import { VARIANT } from './constants';
 const variant = oneOf(Object.keys(VARIANT));
 
 export const menuItemPropType = shape({
+  /* TargetX Custom Props */
+  testID: string,
+
   iconEnd: element,
   iconStart: element,
   disabled: bool,
