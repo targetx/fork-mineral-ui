@@ -121,7 +121,7 @@ export const BoxRoot = styled('div', {
     ...(overflow && { overflow }),
     ...(position && { position }),
     ...(right && { right }),
-    ...(scrollable && { overflow: 'scroll' }),
+    ...(scrollable && { overflow: 'auto' }),
     ...(top && { top }),
     ...(zIndex && { zIndex })
   };
