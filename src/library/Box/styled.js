@@ -67,6 +67,7 @@ export const BoxRoot = styled('div', {
     value: SpacingValue
   ): number | string => {
     const map = {
+      background: background => background,
       borderRadius: borderRadius => borderRadius,
       display: (value) => (value ? 'inline-block' : undefined),
       height: getMeasurement,
@@ -90,6 +91,7 @@ export const BoxRoot = styled('div', {
       breakpoints,
       mapValueToProperty,
       styles: {
+        background,
         borderRadius,
         display: inline,
         height,
@@ -101,7 +103,6 @@ export const BoxRoot = styled('div', {
     }),
 
     /* TargetX Custom Styles */
-    ...(background && { background }),
     ...(backgroundColor && { backgroundColor }),
     ...(blur && { filter: `blur(${blur}px)` }),
     ...(border && { border }),
