@@ -1,1 +1,1 @@
-declare module '@targetx/mineral-ui/utils/generateId';
+declare module '@targetx/mineral-ui/utils';
