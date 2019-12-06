@@ -41,7 +41,10 @@ export const AvatarRoot = styled('span', {
       display: 'inline-flex',
       fontWeight: theme.Avatar_fontWeight,
       height: size,
-      lineHeight: size,
+      lineHeight:
+        typeof propSize === 'number'
+          ? `${propSize / 2}px`
+          : theme[`Avatar_size_${propSize}`],
       justifyContent: 'center',
       verticalAlign: 'middle',
       width: size,

@@ -19,6 +19,13 @@ export declare namespace Button {
     iconEnd?: ReactElement;
     iconStart?: ReactElement;
     justifyContent?: string;
+    margin?: number | string;
+    marginBottom?: number | string;
+    marginHorizontal?: number | string;
+    marginLeft?: number | string;
+    marginRight?: number | string;
+    marginTop?: number | string;
+    marginVertical?: number | string;
     minimal?: boolean;
     primary?: boolean;
     size?: string;
