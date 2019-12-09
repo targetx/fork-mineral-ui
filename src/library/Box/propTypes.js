@@ -28,6 +28,8 @@ export const boxPropTypes = {
   minHeight: oneOfType([string, number]),
   minWidth: oneOfType([string, number]),
   overflow: string,
+  overflowX: string,
+  overflowY: string,
   position: string,
   right: string,
   scrollable: bool,

@@ -27,6 +27,8 @@ export type BoxProps = {
   minHeight?: string | number,
   minWidth?: string | number,
   overflow?: string,
+  overflowX?: string,
+  overflowY?: string,
   position?: string,
   right?: string,
   scrollable?: boolean,
