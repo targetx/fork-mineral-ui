@@ -9,6 +9,11 @@ import type {
 
 export type FormFieldProps = {
   /* TargetX Custom Props */
+  border?: string,
+  borderBottom?: string,
+  borderLeft?: string,
+  borderRight?: string,
+  borderTop?: string,
   labelFor?: string,
   marginBottom?: number | string,
   marginTop?: number | string,
@@ -34,7 +39,12 @@ export type FormFieldDefaultProps = {
   requiredText: string | React$Element<*>
 };
 
-export type FormFieldDividerProps = Object;
+export type FormFieldDividerProps = {
+  color?: string,
+  marginBottom?: number | string,
+  marginTop?: number | string,
+  marginVertical?: number | string
+};
 
 export type FormFieldsetProps = {
   children?: React$Node,
