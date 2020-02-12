@@ -9,9 +9,15 @@ import {
 } from './themes';
 
 export const FormFieldRoot = styled('div')(
-  ({ marginBottom, marginTop, marginVertical, width, theme }) => {
+  ({ border, borderBottom, borderLeft, borderRight, borderTop, marginBottom, marginTop, marginVertical, width, theme }) => {
     return {
       ...componentStyleReset(theme),
+      /* TargetX Custom Styles */
+      ...(border && { border }),
+      ...(borderBottom && { borderBottom }),
+      ...(borderLeft && { borderLeft }),
+      ...(borderRight && { borderRight }),
+      ...(borderTop && { borderTop }),
       ...(marginBottom && { marginBottom }),
       ...(marginTop && { marginTop }),
       ...(marginVertical && {
@@ -46,13 +52,20 @@ export const FormFieldCaption = styled('div')(
   }
 );
 
-export const FormFieldDividerRoot = styled('div')(({ theme: baseTheme }) => {
+export const FormFieldDividerRoot = styled('div')(({ color, marginBottom, marginTop, marginVertical, theme: baseTheme }) => {
   const theme = formFieldDividerTheme(baseTheme);
 
   return {
-    backgroundColor: theme.FormFieldDivider_borderColor,
+    backgroundColor: color || theme.FormFieldDivider_borderColor,
     height: theme.FormFieldDivider_borderWidth,
-    margin: `${theme.FormFieldDivider_margin} 0`
+    margin: `${theme.FormFieldDivider_margin} 0`,
+    /* TargetX Custom Styles */
+    ...(marginBottom && { marginBottom }),
+    ...(marginTop && { marginTop }),
+    ...(marginVertical && {
+      marginBottom: marginVertical,
+      marginTop: marginVertical
+    })
   };
 });
 

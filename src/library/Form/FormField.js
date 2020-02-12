@@ -22,6 +22,11 @@ export default class FormField extends Component<FormFieldProps> {
 
   render() {
     const {
+      border,
+      borderBottom,
+      borderLeft,
+      borderRight,
+      borderTop,
       labelFor,
       marginBottom,
       marginTop,
@@ -43,6 +48,11 @@ export default class FormField extends Component<FormFieldProps> {
     } = this.props;
 
     const rootProps = {
+      border,
+      borderBottom,
+      borderLeft,
+      borderRight,
+      borderTop,
       marginBottom,
       marginTop,
       marginVertical,

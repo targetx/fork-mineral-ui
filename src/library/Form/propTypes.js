@@ -14,6 +14,11 @@ import { VARIANT } from './constants';
 
 export const formFieldPropTypes = {
   /* TargetX Custom Props */
+  border: string,
+  borderBottom: string,
+  borderLeft: string,
+  borderRight: string,
+  borderTop: string,
   labelFor: string,
   marginBottom: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
@@ -34,7 +39,13 @@ export const formFieldPropTypes = {
   variant: oneOf(Object.keys(VARIANT))
 };
 
-export const formFieldDividerPropTypes = {};
+export const formFieldDividerPropTypes = {
+  /* TargetX Custom Props */
+  color: string,
+  marginBottom: oneOfType([number, string]),
+  marginTop: oneOfType([number, string]),
+  marginVertical: oneOfType([number, string])
+};
 
 export const formFieldsetPropTypes = {
   children: node,

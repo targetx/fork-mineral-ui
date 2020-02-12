@@ -28,7 +28,9 @@ export declare namespace Button {
     marginVertical?: number | string;
     minimal?: boolean;
     primary?: boolean;
+    rel?: string;
     size?: string;
+    target?: string;
     variant?: string;
     width?: string;
   }
