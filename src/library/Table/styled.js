@@ -27,6 +27,7 @@ const tableCellStyles = ({
   clickable,
   color,
   cursor,
+  truncate,
   verticalAlign,
 
   density,
@@ -62,6 +63,15 @@ const tableCellStyles = ({
     ...(clickable ? { cursor: 'pointer' } : {}),
     ...(color ? { color } : {}),
     ...(cursor ? { cursor } : {}),
+    ...(truncate
+      ? {
+          maxWidth: truncate === true ? '100%' : truncate,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          wordWrap: 'normal'
+        }
+      : {}),
     verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
 
     ['&:not(:first-child)' + ignoreSsrWarning]: {

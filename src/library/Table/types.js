@@ -200,10 +200,11 @@ type TableThemeKeys = {|
 
 export type TableCellProps = {
   /* TargetX Custom Props */
-  clickable: boolean,
-  color: string,
-  cursor: string,
-  verticalAlign: string,
+  clickable?: boolean,
+  color?: string,
+  cursor?: string,
+  truncate?: boolean | number | string,
+  verticalAlign?: string,
 
   /* Built-In Props */
   as?: string,
