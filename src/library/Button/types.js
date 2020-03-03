@@ -12,6 +12,8 @@ type Variant = $Keys<typeof VARIANT>;
 
 export type ButtonProps = {
   /* TargetX Custom Props */
+  htmlFor?: string,
+  justifyContent?: string,
   margin?: number | string,
   marginBottom?: number | string,
   marginHorizontal?: number | string,
@@ -19,7 +21,8 @@ export type ButtonProps = {
   marginRight?: number | string,
   marginTop?: number | string,
   marginVertical?: number | string,
-  justifyContent?: string,
+  rel?: string,
+  target?: string,
   width?: string,
 
   children?: React$Node,

@@ -16,6 +16,7 @@ export declare namespace Button {
     css?: { [key: string]: any };
     fullWidth?: boolean;
     href?: string;
+    htmlFor?: string;
     iconEnd?: ReactElement;
     iconStart?: ReactElement;
     justifyContent?: string;

@@ -4,6 +4,8 @@ import { SIZE, VARIANT } from './constants';
 
 export const buttonPropTypes = {
   /* TargetX Custom Props */
+  htmlFor: string,
+  justifyContent: string,
   margin: oneOfType([number, string]),
   marginBottom: oneOfType([number, string]),
   marginHorizontal: oneOfType([number, string]),
@@ -11,8 +13,9 @@ export const buttonPropTypes = {
   marginRight: oneOfType([number, string]),
   marginTop: oneOfType([number, string]),
   marginVertical: oneOfType([number, string]),
+  rel: string,
+  target: string,
   width: string,
-  justifyContent: string,
 
   /* Built-In Props */
   children: node,
