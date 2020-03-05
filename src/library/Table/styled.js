@@ -27,8 +27,11 @@ const tableCellStyles = ({
   clickable,
   color,
   cursor,
+  maxWidth,
+  minWidth,
   truncate,
   verticalAlign,
+  width,
 
   density,
   highContrast,
@@ -63,6 +66,8 @@ const tableCellStyles = ({
     ...(clickable ? { cursor: 'pointer' } : {}),
     ...(color ? { color } : {}),
     ...(cursor ? { cursor } : {}),
+    ...(maxWidth ? { maxWidth } : {}),
+    ...(minWidth ? { minWidth } : {}),
     ...(truncate
       ? {
           maxWidth: truncate === true ? '100%' : truncate,
@@ -73,7 +78,7 @@ const tableCellStyles = ({
         }
       : {}),
     verticalAlign: verticalAlign || theme.TableCell_verticalAlign,
-
+    ...(width ? { width } : {}),
     ['&:not(:first-child)' + ignoreSsrWarning]: {
       [borderProperty]: borderVertical
     }

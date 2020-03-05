@@ -203,8 +203,11 @@ export type TableCellProps = {
   clickable?: boolean,
   color?: string,
   cursor?: string,
+  maxWidth: number | string,
+  minWidth: number | string,
   truncate?: boolean | number | string,
   verticalAlign?: string,
+  width: number | string,
 
   /* Built-In Props */
   as?: string,
