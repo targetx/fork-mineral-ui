@@ -11,6 +11,7 @@ export const boxPropTypes = {
   /* TargetX Custom Props */
   background: oneOfType([string, arrayOf(string)]),
   backgroundColor: string,
+  backgroundColorOnHover: string,
   blur: number,
   border: string,
   borderBottom: string,

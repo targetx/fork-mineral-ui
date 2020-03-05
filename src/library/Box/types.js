@@ -10,6 +10,7 @@ export type BoxProps = {
   /* TargetX Custom Props */
   background?: string | Array<string>,
   backgroundColor?: string,
+  backgroundColorOnHover?: string,
   blur?: number,
   border?: string,
   borderBottom?: string,

@@ -1,9 +1,9 @@
 /* @flow */
 import isPropValid from '@emotion/is-prop-valid';
 import styled from '@emotion/styled';
+import darken from 'polished/lib/color/darken';
 import { componentStyleReset, getResponsiveStyles } from '../styles';
 import { SPACING_TYPES } from './constants';
-
 import type { SpacingStyles, SpacingValue } from './types';
 
 const getMeasurement = (value: number | string) =>
@@ -59,7 +59,7 @@ const getSpacingStyles = (
 export const BoxRoot = styled('div', {
   shouldForwardProp: (prop) =>
     ['filter', 'height', 'width'].indexOf(prop) === -1 && isPropValid(prop)
-})(({ background, backgroundColor, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, bottom, boxShadow, cursor, filter, left, maxHeight, maxWidth, minHeight, minWidth, overflow, overflowX, overflowY, position, right, scrollable, top, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
+})(({ background, backgroundColor, backgroundColorOnHover, blur, border, borderBottom, borderLeft, borderRadius, borderRight, borderTop, bottom, boxShadow, cursor, filter, left, maxHeight, maxWidth, minHeight, minWidth, overflow, overflowX, overflowY, position, right, scrollable, top, zIndex, breakpoints, height, inline, theme, width, ...restProps }) => {
   const rtl = theme.direction === 'rtl';
 
   const mapValueToProperty = (
@@ -104,6 +104,10 @@ export const BoxRoot = styled('div', {
 
     /* TargetX Custom Styles */
     ...(backgroundColor && { backgroundColor }),
+    ...(backgroundColorOnHover && {
+      '&:hover': { backgroundColor: backgroundColorOnHover },
+      '&:active': { backgroundColor: darken(0.04, backgroundColorOnHover) }
+    }),
     ...(blur && { filter: `blur(${blur}px)` }),
     ...(border && { border }),
     ...(borderBottom && { borderBottom }),
