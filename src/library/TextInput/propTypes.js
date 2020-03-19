@@ -22,7 +22,7 @@ export const textInputPropTypes = {
   htmlSize: oneOfType([number, string]),
   iconStart: element,
   iconEnd: element,
-  inputRef: func,
+  inputRef: oneOfType([func, object]),
   rootProps: object,
   invalid: bool,
   onChange: func,
