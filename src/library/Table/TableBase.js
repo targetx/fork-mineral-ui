@@ -39,6 +39,7 @@ export default class TableBase extends Component<
     const {
       border,
       borderRadius,
+      boxShadow,
       fullWidth,
       hoverable,
       width,
@@ -114,6 +115,7 @@ export default class TableBase extends Component<
       const containerProps = {
         border,
         borderRadius,
+        boxShadow,
         fullWidth,
         width,
         'aria-labelledby': this.titleId,

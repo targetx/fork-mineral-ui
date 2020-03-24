@@ -53,6 +53,7 @@ export type TableBaseProps = {
   backgroundColor?: string,
   border?: string,
   borderRadius?: string,
+  boxShadow?: string,
   fullWidth?: boolean,
   hoverable?: boolean,
   width?: string,

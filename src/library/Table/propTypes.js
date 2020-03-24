@@ -52,6 +52,7 @@ export const tablePropTypes = {
   backgroundColor: string,
   border: string,
   borderRadius: string,
+  boxShadow: string,
   fullWidth: bool,
   width: string,
 
