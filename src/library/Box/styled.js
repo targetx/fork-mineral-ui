@@ -1,7 +1,7 @@
 /* @flow */
 import isPropValid from '@emotion/is-prop-valid';
 import styled from '@emotion/styled';
-import darken from 'polished/lib/color/darken';
+import Color from 'color';
 import { componentStyleReset, getResponsiveStyles } from '../styles';
 import { SPACING_TYPES } from './constants';
 import type { SpacingStyles, SpacingValue } from './types';
@@ -106,7 +106,7 @@ export const BoxRoot = styled('div', {
     ...(backgroundColor && { backgroundColor }),
     ...(backgroundColorOnHover && {
       '&:hover': { backgroundColor: backgroundColorOnHover },
-      '&:active': { backgroundColor: darken(0.04, backgroundColorOnHover) }
+      '&:active': { backgroundColor: Color(backgroundColorOnHover).darken(0.2).hex() }
     }),
     ...(blur && { filter: `blur(${blur}px)` }),
     ...(border && { border }),
