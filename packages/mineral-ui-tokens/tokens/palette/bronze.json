@@ -1,14 +1,14 @@
 {
   "aliases": {
-    "bronze_10": "#fdf1d1",
-    "bronze_20": "#fce3a3",
-    "bronze_30": "#fbdc8c",
-    "bronze_40": "#fad474",
-    "bronze_50": "#f9c646",
+    "bronze_10": "#fef3d9",
+    "bronze_20": "#fce7b2",
+    "bronze_30": "#fbdb8c",
+    "bronze_40": "#facf65",
+    "bronze_50": "#f8c33f",
     "bronze_60": "#f7b718",
-    "bronze_70": "#e5aa17",
-    "bronze_80": "#d29c15",
-    "bronze_90": "#c08e13",
-    "bronze_100": "#ad8011"
+    "bronze_70": "#c69213",
+    "bronze_80": "#946e0e",
+    "bronze_90": "#63490a",
+    "bronze_100": "#312505"
   }
 }
