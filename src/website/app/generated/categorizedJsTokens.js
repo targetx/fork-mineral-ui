@@ -1,4 +1,3 @@
-/* @flow */
 export default {
   background: {
     backgroundColor: '#ffffff',
@@ -34,13 +33,13 @@ export default {
     backgroundColor_warningPrimary_active: '#c69213',
     backgroundColor_warningPrimary_focus: '#f7b718',
     backgroundColor_warningPrimary_hover: '#f8c33f',
-    backgroundColor_grayscale_active: '#ebeff5',
-    backgroundColor_grayscale_focus: '#f5f7fa',
-    backgroundColor_grayscale_hover: '#f5f7fa',
-    backgroundColor_grayscalePrimary: '#ebeff5',
-    backgroundColor_grayscalePrimary_active: '#c8d1e0',
-    backgroundColor_grayscalePrimary_focus: '#ebeff5',
-    backgroundColor_grayscalePrimary_hover: '#dde3ed'
+    backgroundColor_grayscale_active: '#dde3ed',
+    backgroundColor_grayscale_focus: '#ebeff5',
+    backgroundColor_grayscale_hover: '#ebeff5',
+    backgroundColor_grayscalePrimary: '#dde3ed',
+    backgroundColor_grayscalePrimary_active: '#afbacc',
+    backgroundColor_grayscalePrimary_focus: '#dde3ed',
+    backgroundColor_grayscalePrimary_hover: '#c8d1e0'
   },
   border: {
     borderColor: '#c8d1e0',
@@ -92,8 +91,8 @@ export default {
     checkbox_borderWidth: '2'
   },
   control: {
-    control_borderColor: '#ebeff5',
-    control_borderColor_hover: '#ebeff5'
+    control_borderColor: '#c8d1e0',
+    control_borderColor_hover: '#c8d1e0'
   },
   cursor: {
     cursor_style: 'pointer'
@@ -142,7 +141,7 @@ export default {
   },
   input: {
     input_backgroundColor: '#ffffff',
-    input_backgroundColor_disabled: '#f5f7fa',
+    input_backgroundColor_disabled: '#ebeff5',
     input_color_placeholder: '#8e99ab',
     input_size_small: '24px',
     input_size_medium: '30px',
@@ -185,9 +184,9 @@ export default {
   typography: {
     color: '#333840',
     color_inverted: '#ffffff',
-    color_disabled: '#c8d1e0',
+    color_disabled: '#afbacc',
     color_mouse: '#58606e',
-    color_readOnly: '#333840',
+    color_readOnly: '#58606e',
     color_required: '#cc0b1f',
     color_brand: '#1b7bbc',
     color_brandPrimary: '#ffffff',
@@ -234,7 +233,7 @@ export default {
     lineHeight_prose: 1.5
   },
   well: {
-    well_backgroundColor: '#ebeff5',
+    well_backgroundColor: '#dde3ed',
     well_backgroundColor_danger: '#f1c2c6',
     well_backgroundColor_success: '#bdeed3',
     well_backgroundColor_warning: '#fce7b2',

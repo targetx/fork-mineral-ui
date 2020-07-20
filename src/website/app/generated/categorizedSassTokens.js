@@ -34,13 +34,13 @@ export default {
     '$mnrl-backgroundColor-warningPrimary-active': '#c69213',
     '$mnrl-backgroundColor-warningPrimary-focus': '#f7b718',
     '$mnrl-backgroundColor-warningPrimary-hover': '#f8c33f',
-    '$mnrl-backgroundColor-grayscale-active': '#ebeff5',
-    '$mnrl-backgroundColor-grayscale-focus': '#f5f7fa',
-    '$mnrl-backgroundColor-grayscale-hover': '#f5f7fa',
-    '$mnrl-backgroundColor-grayscalePrimary': '#ebeff5',
-    '$mnrl-backgroundColor-grayscalePrimary-active': '#c8d1e0',
-    '$mnrl-backgroundColor-grayscalePrimary-focus': '#ebeff5',
-    '$mnrl-backgroundColor-grayscalePrimary-hover': '#dde3ed'
+    '$mnrl-backgroundColor-grayscale-active': '#dde3ed',
+    '$mnrl-backgroundColor-grayscale-focus': '#ebeff5',
+    '$mnrl-backgroundColor-grayscale-hover': '#ebeff5',
+    '$mnrl-backgroundColor-grayscalePrimary': '#dde3ed',
+    '$mnrl-backgroundColor-grayscalePrimary-active': '#afbacc',
+    '$mnrl-backgroundColor-grayscalePrimary-focus': '#dde3ed',
+    '$mnrl-backgroundColor-grayscalePrimary-hover': '#c8d1e0'
   },
   border: {
     '$mnrl-borderColor': '#c8d1e0',
@@ -92,8 +92,8 @@ export default {
     '$mnrl-checkbox-borderWidth': '2'
   },
   control: {
-    '$mnrl-control-borderColor': '#ebeff5',
-    '$mnrl-control-borderColor-hover': '#ebeff5'
+    '$mnrl-control-borderColor': '#c8d1e0',
+    '$mnrl-control-borderColor-hover': '#c8d1e0'
   },
   cursor: {
     '$mnrl-cursor-style': 'pointer'
@@ -145,7 +145,7 @@ export default {
   },
   input: {
     '$mnrl-input-backgroundColor': '#ffffff',
-    '$mnrl-input-backgroundColor-disabled': '#f5f7fa',
+    '$mnrl-input-backgroundColor-disabled': '#ebeff5',
     '$mnrl-input-color-placeholder': '#8e99ab',
     '$mnrl-input-size-small': '24px',
     '$mnrl-input-size-medium': '30px',
@@ -188,9 +188,9 @@ export default {
   typography: {
     '$mnrl-color': '#333840',
     '$mnrl-color-inverted': '#ffffff',
-    '$mnrl-color-disabled': '#c8d1e0',
+    '$mnrl-color-disabled': '#afbacc',
     '$mnrl-color-mouse': '#58606e',
-    '$mnrl-color-readOnly': '#333840',
+    '$mnrl-color-readOnly': '#58606e',
     '$mnrl-color-required': '#cc0b1f',
     '$mnrl-color-brand': '#1b7bbc',
     '$mnrl-color-brandPrimary': '#ffffff',
@@ -237,7 +237,7 @@ export default {
     '$mnrl-lineHeight-prose': 1.5
   },
   well: {
-    '$mnrl-well-backgroundColor': '#ebeff5',
+    '$mnrl-well-backgroundColor': '#dde3ed',
     '$mnrl-well-backgroundColor-danger': '#f1c2c6',
     '$mnrl-well-backgroundColor-success': '#bdeed3',
     '$mnrl-well-backgroundColor-warning': '#fce7b2',
