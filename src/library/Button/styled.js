@@ -1,14 +1,13 @@
 /* @flow */
 import isPropValid from '@emotion/is-prop-valid';
 import styled from '@emotion/styled';
+import type { StyledComponent } from '@emotion/styled-base/src/utils';
 import { ellipsis } from 'polished';
 import { componentStyleReset, getNormalizedValue } from '../styles';
 import { ignoreSsrWarning } from '../utils/emotion';
 import { SIZE } from './constants';
 import { buttonTheme } from './themes';
-
 import type { ButtonProps } from './types';
-import type { StyledComponent } from '@emotion/styled-base/src/utils';
 
 const chooseColor = ({ disabled, primary, minimal }: ButtonProps, theme) => {
   if (disabled && !minimal) {
@@ -63,7 +62,7 @@ export const Content: StyledComponent<{ [key: string]: any }> = styled('span', {
   };
 });
 
-export const Inner: StyledComponent<{ [key: string]: any }> = styled('span')({
+export const Inner: StyledComponent<{ [key: string]: any }> = styled('span', {
   shouldForwardProp: (prop) => prop !== 'size' && isPropValid(prop)
 })(({ justifyContent }) => ({
   alignItems: 'center',
