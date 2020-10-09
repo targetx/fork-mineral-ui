@@ -1,7 +1,6 @@
 /* @flow */
-import { SPACING_SIZE, INSET_SPACING_SIZE } from './constants';
-
 import type { StyleValue } from '../styles/types';
+import { INSET_SPACING_SIZE, SPACING_SIZE } from './constants';
 
 type SpacingSize = $Keys<typeof SPACING_SIZE>;
 type InsetSpacingSize = $Keys<typeof INSET_SPACING_SIZE>;
@@ -18,11 +17,11 @@ export type BoxProps = {
   borderRadius?: string | Array<string>,
   borderRight?: string,
   borderTop?: string,
-  bottom?: string,
+  bottom?: string | number,
   boxShadow?: string,
   cursor?: string,
   filter?: string,
-  left?: string,
+  left?: string | number,
   maxHeight?: string | number,
   maxWidth?: string | number,
   minHeight?: string | number,
@@ -31,9 +30,9 @@ export type BoxProps = {
   overflowX?: string,
   overflowY?: string,
   position?: string,
-  right?: string,
+  right?: string | number,
   scrollable?: boolean,
-  top?: string,
+  top?: string | number,
   zIndex?: string | number,
 
   /* Built-In Props */
